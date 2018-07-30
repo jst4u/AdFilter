@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="TlPjInfo.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="TlPjInfo.pjCode" />
+				<ref bean="TlPjInfo.pjName" />
+				<ref bean="TlPjInfo.pjManager" />
+				<ref bean="TlPjInfo.pjDesc" />
+				<ref bean="TlPjInfo.pjStatus" />
+				<ref bean="TlPjInfo.pjCapital" />
+				<ref bean="TlPjInfo.pjA" />
+				<ref bean="TlPjInfo.pjB" />
+				<ref bean="TlPjInfo.pjC" />
+				<ref bean="TlPjInfo.pjUsers" />
+				<ref bean="TlPjInfo.pjDescRelationship" />
+				<ref bean="TlPjInfo.pjDescCapital" />
+				<ref bean="TlPjInfo.pjEstimateEndtime" />
+				<ref bean="TlPjInfo.pjBiddingTime" />
+				<ref bean="TlPjInfo.pjStarttime" />
+				<ref bean="TlPjInfo.pjEndtime" />
+				<ref bean="TlPjInfo.pjBeginTime" />
+				<ref bean="TlPjInfo.pjOwner" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="TlPjInfo.pjId" parent="fieldDefinition">
+		<property name="fieldName" value="pjId" />
+		<property name="label" value="项目ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjCode" parent="fieldDefinition">
+		<property name="fieldName" value="pjCode" />
+		<property name="label" value="项目编号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjName" parent="fieldDefinition">
+		<property name="fieldName" value="pjName" />
+		<property name="label" value="项目名称" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjManager" parent="fieldDefinition">
+		<property name="fieldName" value="pjManager" />
+		<property name="label" value="项目经理" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjDesc" parent="fieldDefinition">
+		<property name="fieldName" value="pjDesc" />
+		<property name="label" value="项目描述" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="500" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjStatus" parent="fieldDefinition">
+		<property name="fieldName" value="pjStatus" />
+		<property name="label" value="项目状态" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="TlPjInfo.pjCapital" parent="fieldDefinition">
+		<property name="fieldName" value="pjCapital" />
+		<property name="label" value="项目预计资金大小" />
+		<property name="fieldType" value="double" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="22" />
+		<property name="scale" value="0" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjA" parent="fieldDefinition">
+		<property name="fieldName" value="pjA" />
+		<property name="label" value="项目甲方" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjB" parent="fieldDefinition">
+		<property name="fieldName" value="pjB" />
+		<property name="label" value="项目乙方" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjC" parent="fieldDefinition">
+		<property name="fieldName" value="pjC" />
+		<property name="label" value="项目丙方" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjUsers" parent="fieldDefinition">
+		<property name="fieldName" value="pjUsers" />
+		<property name="label" value="项目相关用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjDescRelationship" parent="fieldDefinition">
+		<property name="fieldName" value="pjDescRelationship" />
+		<property name="label" value="项目关系描述" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="500" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjDescCapital" parent="fieldDefinition">
+		<property name="fieldName" value="pjDescCapital" />
+		<property name="label" value="项目资金描述" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="500" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.pjEstimateEndtime" parent="fieldDefinition">
+		<property name="fieldName" value="pjEstimateEndtime" />
+		<property name="label" value="项目预计结束日期" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="TlPjInfo.pjBiddingTime" parent="fieldDefinition">
+		<property name="fieldName" value="pjBiddingTime" />
+		<property name="label" value="项目招标日期" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="TlPjInfo.pjStarttime" parent="fieldDefinition">
+		<property name="fieldName" value="pjStarttime" />
+		<property name="label" value="项目启动会正式开始日期" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="TlPjInfo.pjEndtime" parent="fieldDefinition">
+		<property name="fieldName" value="pjEndtime" />
+		<property name="label" value="项目终验通过日期" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="TlPjInfo.pjBeginTime" parent="fieldDefinition">
+		<property name="fieldName" value="pjBeginTime" />
+		<property name="label" value="项目自从跟踪开始的日期" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="TlPjInfo.pjOwner" parent="fieldDefinition">
+		<property name="fieldName" value="pjOwner" />
+		<property name="label" value="负责项目跟踪、联系等" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="TlPjInfo.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TlPjInfo.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="TlPjInfo.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

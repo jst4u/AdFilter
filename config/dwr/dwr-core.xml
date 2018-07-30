@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+	<init>
+		<converter class="com.loit.core.dwr.FormatStringDateConverter" id="jsdate" />
+	</init>
+	
+	<allow>
+		<convert match="java.lang.Object" converter="bean"/>
+		<convert match="java.sql.Timestamp" converter="jsdate"/>
+		<convert match="java.util.Date" converter="jsdate"/>
+		<convert match="[Ljava.lang.String;" converter="array"/>
+		<convert match="com.loit.core.hibernate.model.BaseModel" converter="hibernate3"/>
+		<convert match="java.lang.Exception" converter="exception">
+			<param name='include' value='message,lineNumber'/>
+		</convert>
+		<convert match="com.loit.core.exception.AppException" converter="exception">
+			<param name='include' value='message,lineNumber'/>
+		</convert>
+	</allow>
+</dwr>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysSqlLog.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysSqlLog.userId" />
+				<ref bean="SysSqlLog.sqlStatement" />
+				<ref bean="SysSqlLog.logTime" />
+				<ref bean="SysSqlLog.timeUsed" />
+				<ref bean="SysSqlLog.serviceAccessIndex" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysSqlLog.sqlLogId" parent="fieldDefinition">
+		<property name="fieldName" value="sqlLogId" />
+		<property name="label" value="主键" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysSqlLog.userId" parent="fieldDefinition">
+		<property name="fieldName" value="userId" />
+		<property name="label" value="用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysSqlLog.sqlStatement" parent="fieldDefinition">
+		<property name="fieldName" value="sqlStatement" />
+		<property name="label" value="sql语句" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="3000" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysSqlLog.logTime" parent="fieldDefinition">
+		<property name="fieldName" value="logTime" />
+		<property name="label" value="访问时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysSqlLog.timeUsed" parent="fieldDefinition">
+		<property name="fieldName" value="timeUsed" />
+		<property name="label" value="用时（毫秒）" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysSqlLog.serviceAccessIndex" parent="fieldDefinition">
+		<property name="fieldName" value="serviceAccessIndex" />
+		<property name="label" value="服务访问标识" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+</beans>

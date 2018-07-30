@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysUser.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysUser.code" />
+				<ref bean="SysUser.loginName" />
+				<ref bean="SysUser.name" />
+				<ref bean="SysUser.organizeId" />
+				<ref bean="SysUser.reportToUserId" />
+				<ref bean="SysUser.certifiTypeId" />
+				<ref bean="SysUser.certifiCode" />
+				<ref bean="SysUser.password" />
+				<ref bean="SysUser.allowChangePassword" />
+				<ref bean="SysUser.workTypeId" />
+				<ref bean="SysUser.userTypeId" />
+				<ref bean="SysUser.checkFlag" />
+				<ref bean="SysUser.educationTypeId" />
+				<ref bean="SysUser.homeTel" />
+				<ref bean="SysUser.officeTel" />
+				<ref bean="SysUser.mobileTele" />
+				<ref bean="SysUser.addrId" />
+				<ref bean="SysUser.email" />
+				<ref bean="SysUser.createDate" />
+				<ref bean="SysUser.effectDate" />
+				<ref bean="SysUser.expireDate" />
+				<ref bean="SysUser.multiLoginFlag" />
+				<ref bean="SysUser.lastLoginLogId" />
+				<ref bean="SysUser.tryTimes" />
+				<ref bean="SysUser.lockFlag" />
+				<ref bean="SysUser.isLogin" />
+				<ref bean="SysUser.remarks" />
+				<ref bean="SysUser.state" />
+				<ref bean="SysUser.qq" />
+				<ref bean="SysUser.icon" />
+				<ref bean="SysUser.iconSmall" />
+				<ref bean="SysUser.msn" />
+				<ref bean="SysUser.onlineStatus" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysUser.userId" parent="fieldDefinition">
+		<property name="fieldName" value="userId" />
+		<property name="label" value="员工内部编码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.code" parent="fieldDefinition">
+		<property name="fieldName" value="code" />
+		<property name="label" value="员工工号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.loginName" parent="fieldDefinition">
+		<property name="fieldName" value="loginName" />
+		<property name="label" value="登录名" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.name" parent="fieldDefinition">
+		<property name="fieldName" value="name" />
+		<property name="label" value="员工姓名" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.organizeId" parent="fieldDefinition">
+		<property name="fieldName" value="organizeId" />
+		<property name="label" value="所属组织" />
+		<property name="fieldType" value="selectCode.org" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.reportToUserId" parent="fieldDefinition">
+		<property name="fieldName" value="reportToUserId" />
+		<property name="label" value="直接领导" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.certifiTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="certifiTypeId" />
+		<property name="label" value="证件类型" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.certifiCode" parent="fieldDefinition">
+		<property name="fieldName" value="certifiCode" />
+		<property name="label" value="证件号码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.password" parent="fieldDefinition">
+		<property name="fieldName" value="password" />
+		<property name="label" value="登录密码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.allowChangePassword" parent="fieldDefinition">
+		<property name="fieldName" value="allowChangePassword" />
+		<property name="label" value="是否允许修改密码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.workTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="workTypeId" />
+		<property name="label" value="职务" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.userTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="userTypeId" />
+		<property name="label" value="员工类型" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.checkFlag" parent="fieldDefinition">
+		<property name="fieldName" value="checkFlag" />
+		<property name="label" value="考核标志" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.educationTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="educationTypeId" />
+		<property name="label" value="学历" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.homeTel" parent="fieldDefinition">
+		<property name="fieldName" value="homeTel" />
+		<property name="label" value="家庭电话" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="15" />
+		<property name="width" value="150" />
+	</bean>
+
+	<bean id="SysUser.officeTel" parent="fieldDefinition">
+		<property name="fieldName" value="officeTel" />
+		<property name="label" value="办公电话" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="15" />
+		<property name="width" value="150" />
+	</bean>
+
+	<bean id="SysUser.mobileTele" parent="fieldDefinition">
+		<property name="fieldName" value="mobileTele" />
+		<property name="label" value="移动电话" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="15" />
+		<property name="width" value="150" />
+	</bean>
+
+	<bean id="SysUser.addrId" parent="fieldDefinition">
+		<property name="fieldName" value="addrId" />
+		<property name="label" value="员工住址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="120" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.email" parent="fieldDefinition">
+		<property name="fieldName" value="email" />
+		<property name="label" value="电子邮件地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.createDate" parent="fieldDefinition">
+		<property name="fieldName" value="createDate" />
+		<property name="label" value="创建日期" />
+		<property name="fieldType" value="date" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.effectDate" parent="fieldDefinition">
+		<property name="fieldName" value="effectDate" />
+		<property name="label" value="账号生效日期" />
+		<property name="fieldType" value="date" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.expireDate" parent="fieldDefinition">
+		<property name="fieldName" value="expireDate" />
+		<property name="label" value="账号失效日期" />
+		<property name="fieldType" value="date" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.multiLoginFlag" parent="fieldDefinition">
+		<property name="fieldName" value="multiLoginFlag" />
+		<property name="label" value="允许同时登录次数" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="2" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.lastLoginLogId" parent="fieldDefinition">
+		<property name="fieldName" value="lastLoginLogId" />
+		<property name="label" value="最后一次登录日志" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="12" />
+		<property name="width" value="120" />
+	</bean>
+
+	<bean id="SysUser.tryTimes" parent="fieldDefinition">
+		<property name="fieldName" value="tryTimes" />
+		<property name="label" value="失败登录尝试次数" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="22" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.lockFlag" parent="fieldDefinition">
+		<property name="fieldName" value="lockFlag" />
+		<property name="label" value="账号锁定状态" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.isLogin" parent="fieldDefinition">
+		<property name="fieldName" value="isLogin" />
+		<property name="label" value="登录标志" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.remarks" parent="fieldDefinition">
+		<property name="fieldName" value="remarks" />
+		<property name="label" value="备注" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1000" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.state" parent="fieldDefinition">
+		<property name="fieldName" value="state" />
+		<property name="label" value="员工状态" />
+		<property name="fieldType" value="selectCode.user_status" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysUser.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysUser.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysUser.qq" parent="fieldDefinition">
+		<property name="fieldName" value="qq" />
+		<property name="label" value="QQ" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="120" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.icon" parent="fieldDefinition">
+		<property name="fieldName" value="icon" />
+		<property name="label" value="头像" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="120" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.iconSmall" parent="fieldDefinition">
+		<property name="fieldName" value="iconSmall" />
+		<property name="label" value="小头像" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="200" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.msn" parent="fieldDefinition">
+		<property name="fieldName" value="msn" />
+		<property name="label" value="MSN" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="200" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUser.onlineStatus" parent="fieldDefinition">
+		<property name="fieldName" value="onlineStatus" />
+		<property name="label" value="在线状态" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

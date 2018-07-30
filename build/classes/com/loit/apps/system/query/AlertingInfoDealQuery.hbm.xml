@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<sql-query name="AlertingInfoDealQuery">
+		<![CDATA[
+
+select info.alerting_info_id,
+	   info.elevator_id,
+       info.send_type_dictid,
+       info.prewarning_info,
+       info.send_time,
+       info.send_to,
+       info.deal_state,
+       info.type,
+       deal.alerting_deal_id,
+       deal.deal_info,
+       deal.deal_time_begin,
+       deal.deal_time_end,
+       man.maintenance_staff_id
+  from esm_alerting_info info, esm_alerting_deal deal,esm_alerting_deal_man man
+ where 1=1
+ and info.alerting_info_id = deal.alerting_info_id(+)
+ and deal.alerting_deal_id=man.alerting_deal_id(+)
+ <<and info.send_time >= :starSendTime>>
+ <<and info.send_time <= :endSendTime>>
+ <<and info.send_type_dictid = :typeDictid>>
+ <<and deal.deal_time_begin >= :starDealBTime>>
+ <<and deal.deal_time_begin <= :endDealBTime>>
+ <<and deal.deal_time_end >= :starDealETime>>
+ <<and deal.deal_time_end <= :endDealETime>>
+ <<and info.type =:type>>
+ <<and man.maintenance_staff_id =:staffId>>
+ order by info.create_time  asc
+
+		]]>
+	</sql-query>
+</hibernate-mapping>

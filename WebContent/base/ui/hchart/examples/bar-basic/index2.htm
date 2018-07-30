@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="../../../../jquery/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript">
+		$(function() {
+			$('#container').highcharts(
+					
+					{
+				"chart" : {
+					"type" : "bar"
+				},
+				"legend" : {
+					"align" : "right",
+					"backgroundColor" : "#FFFFFF",
+					"borderWidth" : 1,
+					"floating" : true,
+					"layout" : "vertical",
+					"navigation" : {},
+					"shadow" : true,
+					"title" : {},
+					"verticalAlign" : "top",
+					"x" : -100,
+					"y" : 100
+				},
+				"series" : [ {
+					"data" : [ 107, 31, 635, 203 ],
+					"name" : "Year 1800"
+				}, {
+					"data" : [ 133, 156, 947, 408 ],
+					"name" : "Year 1900"
+				}, {
+					"data" : [ 973, 914, 4054, 732 ],
+					"name" : "Year 2008"
+				} ],
+				"subtitle" : {
+					"text" : "测试subtitle"
+				},
+				"title" : {
+					"text" : "测试title"
+				},
+				"tooltip" : {
+					"valueSuffix" : "millions"
+				},
+				"xAxis" : {
+					"labels" : {},
+					"plotBands" : {
+						"label" : {}
+					},
+					"plotLines" : {
+						"label" : {}
+					},
+					"title" : {
+						"text" : "xAxis Title"
+					},
+					"type" : "category"
+				},
+				"yAxis" : {
+					"labels" : {
+						"overflow" : "justify"
+					},
+					"min" : 0,
+					
+					"title" : {
+						"align" : "high",
+						"text" : "Population (millions)"
+					}
+				}
+			}
+					
+			);
+		});
+
+    
+
+		</script>
+	</head>
+	<body>
+<script src="../../highcharts.js"></script>
+<script src="../../modules/exporting.js"></script>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>

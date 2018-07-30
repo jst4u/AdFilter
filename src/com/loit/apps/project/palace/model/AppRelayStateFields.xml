@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="AppRelayState.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="AppRelayState.relayId" />
+				<ref bean="AppRelayState.rssiSignalIntensity" />
+				<ref bean="AppRelayState.sendTime" />
+				<ref bean="AppRelayState.systemTime" />
+				<ref bean="AppRelayState.remarks1" />
+				<ref bean="AppRelayState.remarks2" />
+				<ref bean="AppRelayState.remarks3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AppRelayState.id" parent="fieldDefinition">
+		<property name="fieldName" value="id" />
+		<property name="label" value="ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.relayId" parent="fieldDefinition">
+		<property name="fieldName" value="relayId" />
+		<property name="label" value="中继ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.rssiSignalIntensity" parent="fieldDefinition">
+		<property name="fieldName" value="rssiSignalIntensity" />
+		<property name="label" value="RSSI信号强度" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.sendTime" parent="fieldDefinition">
+		<property name="fieldName" value="sendTime" />
+		<property name="label" value="发送时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.systemTime" parent="fieldDefinition">
+		<property name="fieldName" value="systemTime" />
+		<property name="label" value="系统时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppRelayState.remarks1" parent="fieldDefinition">
+		<property name="fieldName" value="remarks1" />
+		<property name="label" value="备注1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.remarks2" parent="fieldDefinition">
+		<property name="fieldName" value="remarks2" />
+		<property name="label" value="备注2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.remarks3" parent="fieldDefinition">
+		<property name="fieldName" value="remarks3" />
+		<property name="label" value="备注3" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayState.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="版本号" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

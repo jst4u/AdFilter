@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-2.5.xsd
+						http://www.springframework.org/schema/jee
+						http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- 加载properties文件配置信息，多个文件逗号分隔 -->
+	<context:property-placeholder
+		location="classpath:jdbc.properties,classpath:security.properties" />
+
+	<!-- JNDI DataSource for J2EE environments  配置数据源-->
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="${jndiname}" /> -->
+	<!-- 配置数据库连接池 此处使用c3p0 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="acquireIncrement" value="2" />
+		<property name="idleConnectionTestPeriod" value="300" />
+		<property name="maxPoolSize" value="6" />
+		<property name="maxStatements" value="0" />
+		<property name="minPoolSize" value="2" />
+		<property name="maxIdleTime" value="600" />
+	</bean>
+
+	<!-- <bean id="multiDataSource" class="com.newsh.core.spring.MultiDataSource"> 
+		<property name="targetDataSources"> <map> <entry key="dataSource1" value-ref="dataSource1" 
+		/> <entry key="dataSource2" value-ref="dataSource2" /> </map> </property> 
+		<property name="defaultTargetDataSource" ref="dataSource" /> </bean> -->
+
+	<!-- Hibernate SessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.loit.core.hibernate.model</value>
+				<value>com.loit.apps.**.model</value>
+			</list>
+		</property>
+		<property name="annotatedClasses">
+		<list>
+			</list>
+		</property>
+		<property name="mappingLocations">
+			<value>classpath*:/com/loit/**/*.hbm.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=${hibernate.dialect}
+				hibernate.query.substitutions=true 'Y', false 'N'
+				hibernate.cache.use_second_level_cache=true
+<!-- 				hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider -->
+				hibernate.jdbc.fetch_size=50
+				hibernate.jdbc.batch_size=25
+				hibernate.show_sql=true
+				hibernate.format_sql=true
+				hibernate.use_sql_comments=true
+				
+			</value>
+		</property>
+		<!-- <property name="lobHandler" ref="lobHandler" /> -->
+	</bean>
+	<!-- <bean id="lobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler"> 
+		<property name="nativeJdbcExtractor" ref="nativeJdbcExtractor" /> </bean> 
+		 -->
+<bean id="nativeJdbcExtractor" class="org.springframework.jdbc.support.nativejdbc.C3P0NativeJdbcExtractor" />
+	<!-- Transaction manager for a single Hibernate SessionFactory -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+<!--CustomEditorConfigurer
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.util.Date">
+					<bean class="com.newsh.core.spring.CustomDateEditor" />
+				</entry>
+				<entry key="java.lang.String[]">
+					<bean class="com.newsh.core.spring.CustomStringArrayEditor" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+-->
+	<bean class="com.loit.core.spring.support.ApplicationContextRegister" />
+
+	<bean id="cookieLocaleResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="cookieName" value="LOIT_CUSTOM_LOCALE_COOKIE" />
+	</bean>
+	
+	<!-- 
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="${basenames}" />
+		<property name="useCodeAsDefaultMessage" value="true" />
+	</bean>
+	-->
+	<!-- 
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
+		<property name="host" value="${mail.host}" /> <property name="defaultEncoding" 
+		value="UTF-8" /> <property name="username" value="${mail.username}" /> <property 
+		name="password" value="${mail.password}" /> <property name="javaMailProperties"> 
+		<value> mail.smtp.auth=true </value> </property> </bean> 
+		-->
+	<!--
+	 <bean id="multicastService" class="com.newsh.core.spring.ClusterServiceInvoker"> 
+		<property name="groupAddress" value="225.0.0.1" /> <property name="port" 
+		value="6789" /> <property name="messageBufferSize" value="1024" /> </bean> -->
+
+	<!-- Enable annotation-based configuration -->
+	<context:annotation-config />
+
+	<!-- Enable classpath scanning for managed spring components -->
+	<context:component-scan base-package="com.loit"
+		name-generator="com.loit.core.spring.support.CustomBeanNameGenerator" />
+
+	<!-- Enable @AspectJ support -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+
+	<!-- Enable @Transactional support -->
+	<tx:annotation-driven />
+
+	<!-- 使用拦截器方式配置事物管理 -->
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* *..service.*.*(..))" order="100" />
+	</aop:config>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" rollback-for="Throwable" />
+		</tx:attributes>
+	</tx:advice>
+
+</beans>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysOnlineUser.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysOnlineUser.userId" />
+				<ref bean="SysOnlineUser.sessionId" />
+				<ref bean="SysOnlineUser.serverName" />
+				<ref bean="SysOnlineUser.remoteAddress" />
+				<ref bean="SysOnlineUser.remoteUser" />
+				<ref bean="SysOnlineUser.loginTime" />
+				<ref bean="SysOnlineUser.lastRequestTime" />
+				<ref bean="SysOnlineUser.expired" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysOnlineUser.onlineUserId" parent="fieldDefinition">
+		<property name="fieldName" value="onlineUserId" />
+		<property name="label" value="主键" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOnlineUser.userId" parent="fieldDefinition">
+		<property name="fieldName" value="userId" />
+		<property name="label" value="用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOnlineUser.sessionId" parent="fieldDefinition">
+		<property name="fieldName" value="sessionId" />
+		<property name="label" value="session" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="32" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOnlineUser.serverName" parent="fieldDefinition">
+		<property name="fieldName" value="serverName" />
+		<property name="label" value="服务器地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="30" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOnlineUser.remoteAddress" parent="fieldDefinition">
+		<property name="fieldName" value="remoteAddress" />
+		<property name="label" value="客户端地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="30" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOnlineUser.remoteUser" parent="fieldDefinition">
+		<property name="fieldName" value="remoteUser" />
+		<property name="label" value="客户端用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="30" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOnlineUser.loginTime" parent="fieldDefinition">
+		<property name="fieldName" value="loginTime" />
+		<property name="label" value="登陆时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysOnlineUser.lastRequestTime" parent="fieldDefinition">
+		<property name="fieldName" value="lastRequestTime" />
+		<property name="label" value="最后访问时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysOnlineUser.expired" parent="fieldDefinition">
+		<property name="fieldName" value="expired" />
+		<property name="label" value="expired" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

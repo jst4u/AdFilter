@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysAppDefine.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysAppDefine.appId" />
+				<ref bean="SysAppDefine.defineStyle" />
+				<ref bean="SysAppDefine.hLogo" />
+				<ref bean="SysAppDefine.hText" />
+				<ref bean="SysAppDefine.hHeight" />
+				<ref bean="SysAppDefine.lHSplitline" />
+				<ref bean="SysAppDefine.lHBackground" />
+				<ref bean="SysAppDefine.lCPics" />
+				<ref bean="SysAppDefine.lCBackground" />
+				<ref bean="SysAppDefine.lCBackgroundLogin" />
+				<ref bean="SysAppDefine.lCButtonStyle" />
+				<ref bean="SysAppDefine.lBHeight" />
+				<ref bean="SysAppDefine.lBBackground" />
+				<ref bean="SysAppDefine.lBText" />
+				<ref bean="SysAppDefine.wMLogo" />
+				<ref bean="SysAppDefine.wMText" />
+				<ref bean="SysAppDefine.wBText" />
+				<ref bean="SysAppDefine.remarks" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysAppDefine.defineId" parent="fieldDefinition">
+		<property name="fieldName" value="defineId" />
+		<property name="label" value="代码ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.appId" parent="fieldDefinition">
+		<property name="fieldName" value="appId" />
+		<property name="label" value="所属应用" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.defineStyle" parent="fieldDefinition">
+		<property name="fieldName" value="defineStyle" />
+		<property name="label" value="页面样式" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.hLogo" parent="fieldDefinition">
+		<property name="fieldName" value="hLogo" />
+		<property name="label" value="登陆页头部logo" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.hText" parent="fieldDefinition">
+		<property name="fieldName" value="hText" />
+		<property name="label" value="登陆页头部文字（应用名称支持html）" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.hHeight" parent="fieldDefinition">
+		<property name="fieldName" value="hHeight" />
+		<property name="label" value="登陆页头部高度" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lHSplitline" parent="fieldDefinition">
+		<property name="fieldName" value="lHSplitline" />
+		<property name="label" value="登陆页头部分割线样式" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lHBackground" parent="fieldDefinition">
+		<property name="fieldName" value="lHBackground" />
+		<property name="label" value="登陆页头部背景" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lCPics" parent="fieldDefinition">
+		<property name="fieldName" value="lCPics" />
+		<property name="label" value="登陆页中部介绍图片（多个以逗号分隔）" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lCBackground" parent="fieldDefinition">
+		<property name="fieldName" value="lCBackground" />
+		<property name="label" value="登陆页中部背景" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lCBackgroundLogin" parent="fieldDefinition">
+		<property name="fieldName" value="lCBackgroundLogin" />
+		<property name="label" value="登陆页中部登录区背景" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lCButtonStyle" parent="fieldDefinition">
+		<property name="fieldName" value="lCButtonStyle" />
+		<property name="label" value="登陆页中部按钮样式" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lBHeight" parent="fieldDefinition">
+		<property name="fieldName" value="lBHeight" />
+		<property name="label" value="登陆页底部高度" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lBBackground" parent="fieldDefinition">
+		<property name="fieldName" value="lBBackground" />
+		<property name="label" value="登陆页底部背景" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.lBText" parent="fieldDefinition">
+		<property name="fieldName" value="lBText" />
+		<property name="label" value="登陆页底部文字（版权链接等支持html）" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.wMLogo" parent="fieldDefinition">
+		<property name="fieldName" value="wMLogo" />
+		<property name="label" value="工作页头部logo（默认使用登陆页logo）" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.wMText" parent="fieldDefinition">
+		<property name="fieldName" value="wMText" />
+		<property name="label" value="工作页头部文字" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.wBText" parent="fieldDefinition">
+		<property name="fieldName" value="wBText" />
+		<property name="label" value="工作页底部文字" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.remarks" parent="fieldDefinition">
+		<property name="fieldName" value="remarks" />
+		<property name="label" value="备注说明" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="200" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysAppDefine.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysAppDefine.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysAppDefine.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

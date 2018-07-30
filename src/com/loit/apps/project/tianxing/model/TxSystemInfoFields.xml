@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="TxSystemInfo.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="TxSystemInfo.cm" />
+				<ref bean="TxSystemInfo.os" />
+				<ref bean="TxSystemInfo.cpu" />
+				<ref bean="TxSystemInfo.mb" />
+				<ref bean="TxSystemInfo.ram" />
+				<ref bean="TxSystemInfo.hdd" />
+				<ref bean="TxSystemInfo.vga" />
+				<ref bean="TxSystemInfo.moniter" />
+				<ref bean="TxSystemInfo.rom" />
+				<ref bean="TxSystemInfo.aud" />
+				<ref bean="TxSystemInfo.lan" />
+				<ref bean="TxSystemInfo.wlan" />
+				<ref bean="TxSystemInfo.mac" />
+				<ref bean="TxSystemInfo.ip" />
+				<ref bean="TxSystemInfo.cid" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="TxSystemInfo.uid" parent="fieldDefinition">
+		<property name="fieldName" value="uid" />
+		<property name="label" value="系统信息ID" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="precision" value="10" />
+		<property name="width" value="110" />
+	</bean>
+
+	<bean id="TxSystemInfo.cm" parent="fieldDefinition">
+		<property name="fieldName" value="cm" />
+		<property name="label" value="电脑型号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.os" parent="fieldDefinition">
+		<property name="fieldName" value="os" />
+		<property name="label" value="操作系统" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.cpu" parent="fieldDefinition">
+		<property name="fieldName" value="cpu" />
+		<property name="label" value="CPU信息" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.mb" parent="fieldDefinition">
+		<property name="fieldName" value="mb" />
+		<property name="label" value="主板" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.ram" parent="fieldDefinition">
+		<property name="fieldName" value="ram" />
+		<property name="label" value="内存信息" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.hdd" parent="fieldDefinition">
+		<property name="fieldName" value="hdd" />
+		<property name="label" value="硬盘" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.vga" parent="fieldDefinition">
+		<property name="fieldName" value="vga" />
+		<property name="label" value="显卡" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.moniter" parent="fieldDefinition">
+		<property name="fieldName" value="moniter" />
+		<property name="label" value="显示器" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.rom" parent="fieldDefinition">
+		<property name="fieldName" value="rom" />
+		<property name="label" value="光驱" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.aud" parent="fieldDefinition">
+		<property name="fieldName" value="aud" />
+		<property name="label" value="声卡" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.lan" parent="fieldDefinition">
+		<property name="fieldName" value="lan" />
+		<property name="label" value="网卡" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.wlan" parent="fieldDefinition">
+		<property name="fieldName" value="wlan" />
+		<property name="label" value="无线网卡" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.mac" parent="fieldDefinition">
+		<property name="fieldName" value="mac" />
+		<property name="label" value="MAC地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.ip" parent="fieldDefinition">
+		<property name="fieldName" value="ip" />
+		<property name="label" value="IP地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSystemInfo.cid" parent="fieldDefinition">
+		<property name="fieldName" value="cid" />
+		<property name="label" value="硬盘码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+</beans>

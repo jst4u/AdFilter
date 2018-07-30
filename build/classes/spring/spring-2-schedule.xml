@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 设备 电池 数据解析 -->
+				<bean class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="appBatteryBaseManager" />
+							<property name="targetMethod" value="start" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="0" />
+					<property name="repeatInterval" value="0" />
+					<property name="repeatCount" value="0" />
+				</bean>
+
+				<!-- 网关 10分钟 -->
+				<!-- <bean class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="sendData" />
+							<property name="targetMethod" value="sendGatewayData" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="0" />
+					<property name="repeatInterval" value="600000" />
+				</bean> -->
+
+				<!-- 中继 75分钟 -->
+				<!-- <bean class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="sendData" />
+							<property name="targetMethod" value="sendRelayData" />
+							<property name="concurrent" value="false" />
+						</bean>
+					</property>
+					<property name="startDelay" value="0" />
+					<property name="repeatInterval" value="4500000" />
+				</bean> -->
+
+				<!-- 节点 75分钟 -->
+				<!--  <bean class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+					<property name="jobDetail">
+						<bean
+							class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+							<property name="targetObject" ref="sendData" />
+							<property name="targetMethod" value="sendNodeData" />
+							<property name="concurrent" value="false" />
+						</bean> 
+					</property>
+					<property name="startDelay" value="0" />
+					<property name="repeatInterval" value="4500000" />
+				</bean> -->
+
+				<!-- 定时存储，1分钟 -->
+				<!-- <bean class="org.springframework.scheduling.quartz.SimpleTriggerBean"> -->
+				<!-- <property name="jobDetail"> -->
+				<!-- <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> -->
+				<!-- <property name="targetObject" ref="areaManager" /> -->
+				<!-- <property name="targetMethod" value="saveDataList" /> -->
+				<!-- <property name="concurrent" value="false" /> -->
+				<!-- </bean> -->
+				<!-- </property> -->
+				<!-- <property name="startDelay" value="60000" /> -->
+				<!-- <property name="repeatInterval" value="60000" /> -->
+				<!-- </bean> -->
+
+				<!-- 每天8：45定时查询接口数据库 -->
+				<!-- <bean class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+				<!-- <property name="jobDetail"> -->
+				<!-- <bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> -->
+				<!-- <property name="targetObject" ref="kpiValueInterface" /> -->
+				<!-- <property name="targetMethod" value="runUpdate" /> -->
+				<!-- <property name="concurrent" value="false" /> -->
+				<!-- </bean> -->
+				<!-- </property> -->
+				<!-- <property name="cronExpression"> -->
+				<!-- <value>0 45 8 * * ?</value> -->
+				<!-- </property> -->
+				<!-- </bean> -->
+
+			</list>
+		</property>
+	</bean>
+
+</beans>

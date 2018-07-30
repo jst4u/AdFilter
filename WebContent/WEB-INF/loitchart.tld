@@ -1,0 +1,2670 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>loitchart</short-name>
+	<uri>/loitchart</uri>
+	<display-name>loitchart</display-name>
+	<tag>
+		<name>chart</name>
+		<tag-class>com.loit.core.web.tag.highchart.ChartTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>标签描述：图表选项</description>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>id属性</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				默认的系列类型图。可以是 line, spline, area, areaspline, column, bar, pie, scatter.
+			</description>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表的主标题</description>
+		</attribute>
+		<attribute>
+			<name>subtitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表的副标题</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表宽度，默认根据图表容器自适应宽度</description>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表高度，默认根据图表容器自适应高度</description>
+		</attribute>
+		<attribute>
+			<name>xAxisTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表的X轴名称</description>
+		</attribute>
+		<attribute>
+			<name>yAxisTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表的Y轴名称</description>
+		</attribute>
+		<attribute>
+			<name>xAxisType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>yAxis的类型
+			</description>
+		</attribute>
+		<attribute>
+			<name>yAxisTitleAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>yAxis的水平对齐方式</description>
+		</attribute>
+		<attribute>
+			<name>legendAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例在图表区域的水平对齐方式。有效值是"left", "center" and "right"&lt;br/&gt;默认是 center
+			</description>
+		</attribute>
+		<attribute>
+			<name>legendLayout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>显示形式，支持水平horizontal和垂直vertical，&lt;br/&gt;默认值horizontal</description>
+		</attribute>
+		<attribute>
+			<name>legendVerticalAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例在图表区域的水平对齐方式。可以是"top", "middle"或"bottom"&lt;br/&gt;默认是bottom
+			</description>
+		</attribute>
+		<attribute>
+			<name>legendBackgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例背景色，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>alignTicks</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>多轴时最小刻度是否自动计算，&lt;br/&gt;默认值true.</description>
+		</attribute>
+		<attribute>
+			<name>animation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否启用动画效果，&lt;br/&gt;默认值true.</description>
+		</attribute>
+		<attribute>
+			<name>backgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				 图表外部的背景色或渐变色&lt;br/&gt;默认是  #FFFFFF.
+			</description>
+		</attribute>
+		<attribute>
+			<name>borderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表外边框的颜色，&lt;br/&gt;默认值#4572A7</description>
+		</attribute>
+		<attribute>
+			<name>borderRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				 图表外边框的圆角半径&lt;br/&gt;默认是5.0
+			</description>
+		</attribute>
+		<attribute>
+			<name>borderWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>外边框的像素宽度&lt;br/&gt;默认值0.0</description>
+		</attribute>
+		<attribute>
+			<name>className</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表容器div使用的一个css类名，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>defaultSeriesType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> type的别名，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				 可以为addSeries 、click、load、redraw、selection&lt;br/&gt;默认是  null
+			</description>
+		</attribute>
+		<attribute>
+			<name>ignoreHiddenSeries</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>如果true,一旦一个系列被隐藏，轴将会扩展剩余的可见系列，&lt;br/&gt;默认值true</description>
+		</attribute>
+		<attribute>
+			<name>inverted</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否倒置轴，使得x轴时垂直的y轴是水平的&lt;br/&gt;默认是false
+			</description>
+		</attribute>
+		<attribute>
+			<name>margin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表的外边框和绘图区域的边距&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>marginBottom</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 下边距，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>marginLeft</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>左边距，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>marginRight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				右边距&lt;br/&gt;默认是 null
+			</description>
+		</attribute>
+		<attribute>
+			<name>marginTop</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 上边距，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>pinchType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				相当于zoomType,但对于多点触控手势只。默认情况下,pinchType zoomType一样设置。然而在某些情况下,例如在股票图表在鼠标拖盘图表,而收聚是启用的。&lt;br/&gt;默认是null
+			</description>
+		</attribute>
+		<attribute>
+			<name>plotBackgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>绘图区域的背景色或渐变&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>plotBackgroundImage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>绘图区背景图片的URL，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>plotBorderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>绘图区的边框颜色，&lt;br/&gt;默认值#C0C0C0</description>
+		</attribute>
+		<attribute>
+			<name>plotBorderWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				绘图区的边框宽度&lt;br/&gt;默认是 0.0
+			</description>
+		</attribute>
+		<attribute>
+			<name>plotShadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>绘图区是否使用阴影效果，&lt;br/&gt;默认值false</description>
+		</attribute>
+		<attribute>
+			<name>polar</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				极坐标&lt;br/&gt;默认是false
+			</description>
+		</attribute>
+		<attribute>
+			<name>reflow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 当窗口大小改变的时候，自适应div大小&lt;br/&gt;默认值true</description>
+		</attribute>
+		<attribute>
+			<name>renderTo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表可以被渲染的HTML元素，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>selectionMarkerFill</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				选中的图表区域的背景颜色&lt;br/&gt;默认是  rgba(69,114,167,0.25)
+			</description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否对外部图表应用下降阴影，&lt;br/&gt;默认值false</description>
+		</attribute>
+		<attribute>
+			<name>showAxes</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				 是否显示最初的坐标轴&lt;br/&gt;默认是false
+			</description>
+		</attribute>
+		<attribute>
+			<name>spacingBottom</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表底部和内容的距离空间&lt;br/&gt;默认值15</description>
+		</attribute>
+		<attribute>
+			<name>spacingLeft</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 图表左边和内容的距离空间，&lt;br/&gt;默认值10.0</description>
+		</attribute>
+		<attribute>
+			<name>spacingRight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表右边和内容的距离空间，&lt;br/&gt;默认值10.0</description>
+		</attribute>
+		<attribute>
+			<name>spacingTop</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图表上边和内容的距离空间&lt;br/&gt;默认是 10.0
+			</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>...，&lt;br/&gt;默认值horizontal</description>
+		</attribute>
+		<attribute>
+			<name>zoomType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				额外的CSS样式可以给内部div容器&lt;br/&gt;默认是null
+			</description>
+		</attribute>
+		<attribute>
+			<name>exportingEnabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否使用该功能，当我false时，则图表没有导出及打印功能 &lt;br/&gt;默认是true 
+			</description>
+		</attribute>
+		<attribute>
+			<name>exportingFilename</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				导出图片文件的文件名，不包含后缀 &lt;br/&gt;默认是chart 
+			</description>
+		</attribute>
+		<attribute>
+			<name>exportingType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				导出图的类型，有image/png, image/jpeg, application/pdf可选&lt;br/&gt;默认是image/png.
+			</description>
+		</attribute>
+		<attribute>
+			<name>exportingUrl</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				导出功能的服务器地址，导出功能需要相应的服务提供支持。你可以自己搭建服务器，在/exporting-server目录下有相应的源文件&lt;br/&gt;默认是http://export.highcharts.com
+			</description>
+		</attribute>
+		<attribute>
+			<name>exportingWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				导出图片文件的宽度，相应的，高度这按照比例 &lt;br/&gt;默认是800.0 
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>legend</name>
+		<tag-class>com.loit.core.web.tag.highchart.LegendTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>标签描述： 图例选项</description>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>id属性</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例在图表区域的水平对齐方式。有效值是"left", "center" and "right"&lt;br/&gt;默认是 center
+			</description>
+		</attribute>
+		<attribute>
+			<name>backgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例背景色，&lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>borderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例边框颜色&lt;br/&gt;默认值#909090</description>
+		</attribute>
+		<attribute>
+			<name>borderRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例边框角度&lt;br/&gt;默认值5</description>
+		</attribute>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示图例&lt;br/&gt;默认值true</description>
+		</attribute>
+		<attribute>
+			<name>floating</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否可以浮动，配合x，y属性&lt;br/&gt;默认值false</description>
+		</attribute>
+		<attribute>
+			<name>itemDistance</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>itemDistance定义了每一项像素之间的距离。&lt;br/&gt;默认值8</description>
+		</attribute>
+		<attribute>
+			<name>itemHiddenStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例的每个系列项目或点项目隐藏时的CSS样式&lt;br/&gt;默认值itemHiddenStyle: {color:'#CCC'}&lt;br/&gt;填写规则：itemHiddenStyle="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>itemHoverStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例的每个系列项目或点项目鼠标滑过时的CSS样式&lt;br/&gt;默认itemHoverStyle: {color: '#000'}&lt;br/&gt;填写规则：itemHoverStyle="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>itemMarginBottom</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个图例项底部边距的像素。&lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>itemMarginTop</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个图例项顶部边距的像素。&lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>itemStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				每个图例项的CSS样式。&lt;br/&gt;默认itemStyle: {cursor: 'pointer',color: '#274b6d',fontSize:'12px'}&lt;br/&gt;填写规则：itemStyle="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>itemWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个图例项目的宽度。当一个包含多个图例项目的水平图例需要垂直对齐时，这是非常有用的&lt;br/&gt;默认null</description>
+		</attribute>
+		<attribute>
+			<name>labelFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>系列的格式化标签。&lt;br/&gt;默认null</description>
+		</attribute>
+		<attribute>
+			<name>layout</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例项目的布局。可以是’horizontal’或’vertical’&lt;br/&gt;默认值horizontal</description>
+		</attribute>
+		<attribute>
+			<name>lineHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例项的行高&lt;br/&gt;默认值为16。</description>
+		</attribute>
+		<attribute>
+			<name>lgMargin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>如果绘图区是自动计算且图例是不浮动的，图例的边距就是图例和坐标轴标签或绘图区的空间&lt;br/&gt;默认值为 15.0</description>
+		</attribute>
+		<attribute>
+			<name>maxHeight</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例的最大高度&lt;br/&gt;默认值为null</description>
+		</attribute>
+		<attribute>
+			<name>padding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例盒子的内边距&lt;br/&gt;默认值为 8.0。</description>
+		</attribute>
+		<attribute>
+			<name>reversed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例项目的顺序相对于系列或点定义的顺序是否要逆序&lt;br/&gt;默认值为false</description>
+		</attribute>
+		<attribute>
+			<name>rtl</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否把标志放在文本的右边&lt;br/&gt;默认值为 false</description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示阴影&lt;br/&gt;默认值false</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例的CSS样式。&lt;br/&gt;默认值null&lt;br/&gt;填写规则：style="属性名1:属性值1,属性名2:属性值2"</description>
+		</attribute>
+		<attribute>
+			<name>symbolPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例内标志和文本的距离&lt;br/&gt;默认是5
+			</description>
+		</attribute>	
+		<attribute>
+			<name>symbolWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例内标志的宽度&lt;br/&gt;默认值为 30.0</description>
+		</attribute>
+		<attribute>
+			<name>useHTML</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否使用HTML渲染图例项目的文本&lt;br/&gt;默认值false</description>
+		</attribute>
+		<attribute>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例在图表区域的水平对齐方式。可以是"top", "middle"或"bottom"&lt;br/&gt;默认是bottom
+			</description>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例宽带&lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>x</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于水平对齐方式align的chart.spacingLeft和chart.spacingRight的x的偏移量&lt;br/&gt;默认值0.0</description>
+		</attribute>
+		<attribute>
+			<name>y</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 相对于垂直对齐方式verticalAlign的chart.spacingTop和chart.spacingBottom的垂直偏移量&lt;br/&gt;默认值0.0</description>
+		</attribute>
+		<attribute>
+			<name>titleText</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图例标题文本内容&lt;br/&gt;默认为：null
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>legendTitle</name>
+		<tag-class>com.loit.core.web.tag.highchart.LegendTitleTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>图例上的标题</description>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>给图例上的标题设置样式&lt;br/&gt;填写规则：style="属性名1:属性值1,属性名2:属性值2"</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>一个文本或HTML字符串标题</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>legendNavigation</name>
+		<tag-class>com.loit.core.web.tag.highchart.LegendNavigationTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>当图例内容溢出出现选项分页或导航。当启用useHTML时,导航是禁用的。</description>
+		<attribute>
+			<name>activeColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在图例导航页面中活动的向上或向下箭头的颜色。&lt;br/&gt;默认值为#3E576F</description>
+		</attribute>
+		<attribute>
+			<name>animation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				向上或向下导航时如何激活页面。值为true应用图表导航中所给的默认的动画选项。额外的选项可以作为一个对象包含值和持续时间。&lt;br/&gt;默认值是true。
+			</description>
+		</attribute>
+		<attribute>
+			<name>arrowSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在图例的分页导航中的向上和向下箭头的像素大小。&lt;br/&gt;默认值是12</description>
+		</attribute>
+		<attribute>
+			<name>inactiveColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在图例的分页导航中的不活动的向上或向下箭头的颜色。</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图例的分页导航的文本样式&lt;br/&gt;填写规则：style="属性名1:属性值1,属性名2:属性值2"</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>title</name>
+		<tag-class>com.loit.core.web.tag.highchart.TitleTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>图表的主标题。</description>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标题的水平对齐方式，可以是left，right，center。&lt;br/&gt;默认值为 center.</description>
+		</attribute>
+		<attribute>
+			<name>floating</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当标题是浮动的时候，绘图区将不会给它留空间&lt;br/&gt;默认值是false。</description>
+		</attribute>
+		<attribute>
+			<name>titleMargin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标题和绘图区的边距。如果显示了子标题，这是子标题和绘图区的边距&lt;br/&gt;默认值是15</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标题的CSS样式。&lt;br/&gt;默认值是{color: '#3E576F',fontSize:'16px'}</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表的标题。禁用标题,设置文本为空&lt;br/&gt;默认值是Chart title</description>
+		</attribute>
+		<attribute>
+			<name>useHTML</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否使用HTML来呈现文本。&lt;br/&gt;默认值是false</description>
+		</attribute>
+		<attribute>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标题的 垂直布局方式。可以是 top，middle，bottom。 &lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>x</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				标题相对于chart.spacingLeft和图表的chart.spacingRight的水平x的偏移量。&lt;br/&gt;默认值是0
+			</description>
+		</attribute>
+		<attribute>
+			<name>y</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				标题相对于chart.spacingTop和图表的chart.spacingBottom的水平y的偏移量。&lt;br/&gt;默认值是15
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>subtitle</name>
+		<tag-class>com.loit.core.web.tag.highchart.SubtitleTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>图表的副标题。</description>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>水平布局方式。可以是left，right，center。&lt;br/&gt;默认值为 center.</description>
+		</attribute>
+		<attribute>
+			<name>floating</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当子标题是浮动的时候，绘图区将不会给它留空间&lt;br/&gt;默认值是false。</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				副标题的样式。&lt;br/&gt;默认值是{color: '#3E576F',fontSize:'16px'}&lt;br/&gt;填写规则：style="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>副标题的文本&lt;br/&gt;默认值是Chart title</description>
+		</attribute>
+		<attribute>
+			<name>useHTML</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否用HTML渲染子标题&lt;br/&gt;默认值是false</description>
+		</attribute>
+		<attribute>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>垂直布局方式。可以是 top，middle，bottom。 &lt;br/&gt;默认值是top</description>
+		</attribute>
+		<attribute>
+			<name>x</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				子标题相对于chart.spacingLeft和图表的chart.spacingRight的水平x的偏移量。&lt;br/&gt;默认值是0
+			</description>
+		</attribute>
+		<attribute>
+			<name>y</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				子标题相对于chart.spacingTop和图表的chart.spacingBottom的水平y的偏移量。&lt;br/&gt;默认值是15
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>chartSql</name>
+		<tag-class>com.loit.core.web.tag.highchart.ChartSqlTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>标签数据</description>
+		<attribute>
+			<name>dataSource</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+			</description>
+		</attribute>
+		<attribute>
+			<name>dimColumn</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>维度列</description>
+		</attribute>
+		<attribute>
+			<name>indexColumns</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>指标列：多个用逗号分隔，可以增加legend，格式如“Ca[:雨量],Cb”，“[:雨量]”是可选项</description>
+		</attribute>
+		<attribute>
+			<name>chartTypes</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>指标列对应的图形类型，默认是柱状</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>tooltip</name>
+		<tag-class>com.loit.core.web.tag.highchart.TooltipTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>当用户将鼠标悬停于一个序列或点,选项出现工具提示。</description>
+		<attribute>
+			<name>animation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用工具提示的动画。&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>backgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				提示的背景颜色或者渐变色。&lt;br/&gt; Type: Color&lt;br/&gt;默认为rgba(255, 255, 255, 0.85).
+			</description>
+		</attribute>
+		<attribute>
+			<name>borderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				提示的边框颜色。当为null时,边界使用相应系列或点的颜色&lt;br/&gt;Type: Color &lt;br/&gt;默认为auto
+			</description>
+		</attribute>
+		<attribute>
+			<name>borderRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>边框圆角的半径&lt;br/&gt;Type: Number&lt;br/&gt;默认为3</description>
+		</attribute>
+		<attribute>
+			<name>borderWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>边框的宽度&lt;br/&gt;Type: Number&lt;br/&gt;默认为1</description>
+		</attribute>
+		<attribute>
+			<name>crosshairs</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				显示十字线，把点和它们的轴值连接起来。十字线可以是Boolean,或者Boolean数组，或者是一个对象&lt;br/&gt;Type: Mixed&lt;br/&gt;默认为null
+			</description>
+		</attribute>
+		<attribute>
+			<name>dateTimeLabelFormats</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				对于时间轴上的序列，工具提示头的日期的格式默认根据最近的数据点猜测。成员给出默认字符串用于表示每个单元&lt;br/&gt;Type: Object
+				&lt;br/&gt;默认为
+				{&lt;br/&gt;millisecond:"%A,
+				%b
+				%e,
+				%H:%M:%S.%L",&lt;br/&gt;second:"%A,
+				%b
+				%e,
+				%H:%M:%S",&lt;br/&gt;minute:"%A,
+				%b
+				%e,
+				%H:%M",&lt;br/&gt;hour:"%A,
+				%b
+				%e,
+				%H:%M",&lt;br/&gt;day:"%A,
+				%b
+				%e,
+				%Y",&lt;br/&gt;week:"Week
+				from
+				%A,
+				%b
+				%e,
+				%Y",&lt;br/&gt;month:"%B
+				%Y",&lt;br/&gt;year:"%Y"&lt;br/&gt;}&lt;br/&gt;填写规则：dateTimeLabelFormats="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用提示&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 true</description>
+		</attribute>
+		<attribute>
+			<name>followPointer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				提示信息是否随着鼠标移动跨列，包括饼图分区和其他点的类型。默认情况下它表现方式&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为true
+			</description>
+		</attribute>
+		<attribute>
+			<name>followTouchMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>提示信息是否随手指在触摸设备移动移动。&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 false</description>
+		</attribute>
+		<attribute>
+			<name>footerFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>附加到提示格式的字符串&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				回调函数，用于格式化输出提示框的显示内容。返回的内容支持html标签如：&lt;br/&gt;Type: Function&lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>headerFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>HTML工具提示的标题行&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>hideDelay</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当鼠标从一个点或图表提示隐藏的毫秒数。&lt;br/&gt;Type: Number&lt;br/&gt;默认为 500</description>
+		</attribute>
+		<attribute>
+			<name>pointFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>HTML的点的线在工具提示。&lt;br/&gt;Type: String&lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>positioner</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				一个回调函数，用来在默认位置放置提示。&lt;br/&gt;Type:  Function&lt;br/&gt;默认为 null
+			</description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示提示的下降阴影&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 true</description>
+		</attribute>
+		<attribute>
+			<name>shared</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				当提示是共享的，整个绘图区将捕获鼠标的移动。所有序列类型的排序数据的提示文本将会显示在一个气泡（提示框）中。&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为false
+			</description>
+		</attribute>
+		<attribute>
+			<name>snap</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				图表或单个点的感应单元。不适合条状图、柱状图和饼图切片。&lt;br/&gt;Type: Number&lt;br/&gt;对于鼠标供电设备的默认值时10，对于触摸设备的默认值时25。
+			</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				提示的CSS样式。&lt;br/&gt;Type: CSSObject&lt;br/&gt;默认为 style: {&lt;br/&gt;color:'#333333',&lt;br/&gt;fontSize:'12px',&lt;br/&gt;padding:'8px'&lt;br/&gt;}&lt;br/&gt;填写规则：style="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>useHTML</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否使用HTML代替SVG来渲染提示的内容&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 false
+			</description>
+		</attribute>
+		<attribute>
+			<name>valueDecimals</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个序列的y值显示多少小数位&lt;br/&gt;Type:  Number&lt;br/&gt;默认保存所有小数</description>
+		</attribute>
+		<attribute>
+			<name>valuePrefix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>附加到序列y值的前缀&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>valueSuffix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>附加到序列y值的后缀&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>xDateFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果x轴是时间轴，显示在提示头部的日期格式。&lt;br/&gt;Type: String&lt;br/&gt;默认基于每个点的最小距离的大约数
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>pane</name>
+		<tag-class>com.loit.core.web.tag.highchart.PaneTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>仅适用于极性图表和角仪表。这个配置对象持有通用选项结合X和Y轴设置。每个xAxis或yAxis可以通过索引引用窗格。</description>
+		<attribute>
+			<name>center</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				极坐标图或角度测量仪的中心点，像数组[x,y]一样定位。位置可以是以像素为单位的整数或者是绘图区域的百分比&lt;br/&gt; Type:&lt;br/&gt;默认为[‘50%’,’50%’].
+			</description>
+		</attribute>
+		<attribute>
+			<name>endAngle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				x轴极坐标或角度轴的最终度数，以度数的方式给出。0是北&lt;br/&gt;Type: Number &lt;br/&gt;默认为startAngle+360.
+			</description>
+		</attribute>
+		<attribute>
+			<name>startAngle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				x轴或测量轴的开始度数，以度数的方式给出。0是北&lt;br/&gt;Type: Number&lt;br/&gt;默认为0
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>background</name>
+		<tag-class>com.loit.core.web.tag.highchart.BackgroundTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>pane标签下使用,背景的一个对象或一组对象。子选项包括backgroundColor、innerWidth, ourterWidth, borderWidth, borderColor</description>
+		<attribute>
+			<name>backgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				背景颜色&lt;br/&gt;Type:&lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>bgBorderWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				边框宽度&lt;br/&gt; Type:&lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>borderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				.边框颜色&lt;br/&gt; Type:lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>outerRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+			</description>
+		</attribute>
+		<attribute>
+			<name>innerRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+			</description>
+		</attribute>
+		<attribute>
+			<name>innerWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+			</description>
+		</attribute>
+		<attribute>
+			<name>outerWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>plotOptions</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.PlotOptionsTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>绘图选项概览</description>
+		<attribute>
+			<name>allowPointSelect</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否允许通过点击标签而选中标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>animation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当一个序列不显示时，是否显示动画&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>color</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主要颜色或序列的颜色&lt;br/&gt; Type: Color&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>connectEnds</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				只用在极坐标图表中。是否要跨越极端连接序列线的终端。在arearange,areasplinerange，bar，boxplot,bubble，column，columnrange，errorbar等中不可用&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true
+			</description>
+		</attribute>
+		<attribute>
+			<name>connectNulls</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否跨过空的点链接图像线。在bar，boxplot,bubble，column，columnrange，errorbar等中不可用&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>cropThreshold</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>处理阈值。在 boxplot,errorbar不可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为300</description>
+		</attribute>
+		<attribute>
+			<name>cursor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>光标&lt;br/&gt; Type: String&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>dashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表段划线样式的名字。在 bar，boxplot,column，columnrange，errorbar不可用&lt;br/&gt; Type: String&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>enableMouseTracking</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用鼠标跟踪一个特定的序列&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				事件。可以是以下值：&lt;br/&gt;checkboxClick：当图例中序列名称后的复选框被点击时触发&lt;br/&gt;click：单击事件，序列被单击时触发&lt;br/&gt;hide：序列在图表生成后隐藏时触发，无论是点击图例项隐藏还是调用.hide()，&lt;br/&gt;legendItemClick：当序列所属图例项目被单击时触发。默认动作是切换序列的可见性&lt;br/&gt;mouseOut：当鼠标离开图表时触发&lt;br/&gt;mouseOver：当鼠标放在图表上时触发&lt;br/&gt;show：当图表生成时间以后当序列显示的时候触发，无论是点击图例中的项或者调用.show()。&lt;br/&gt;Type:String&lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>序列的id&lt;br/&gt;Type: String&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>lineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表基线条的宽度&lt;br/&gt; Type: Number&lt;br/&gt;默认为2</description>
+		</attribute>
+		<attribute>
+			<name>linkedTo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>链接另一个序列的id。&lt;br/&gt; Type: String&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>negativeColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>低于阈值部分地区的图形或点的颜色&lt;br/&gt; Type: Color&lt;br/&gt;默认为null.</description>
+		</attribute>
+		<attribute>
+			<name>pointInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果序列中没有给出各点的x值，pointInterval定义了一个x值的时间间隔&lt;br/&gt; Type: Number&lt;br/&gt;默认为1
+			</description>
+		</attribute>
+		<attribute>
+			<name>pointPlacement</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				可能值:null,”on”,”between”&lt;br/&gt; Type: String&lt;br/&gt;默认为null
+			</description>
+		</attribute>
+		<attribute>
+			<name>pointStart</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果序列没有给各个点x值，pointStart定义了从哪一个值开&lt;br/&gt; Type: Number&lt;br/&gt;默认为0
+			</description>
+		</attribute>
+		<attribute>
+			<name>selected</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在序列初始化时是否选中&lt;br/&gt; Type:  Boolean&lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图表线的阴影&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>showCheckbox</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果是true，将会在图例项中出现复选框允许选择序列&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为false
+			</description>
+		</attribute>
+		<attribute>
+			<name>showInLegend</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否显示部分序列或全部序列的类型在图例中&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true
+			</description>
+		</attribute>
+		<attribute>
+			<name>stacking</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在每个序列顶端是否叠加各个序列的值&lt;br/&gt; Type: String&lt;br/&gt;默认为null.</description>
+		</attribute>
+		<attribute>
+			<name>step</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				是否为其应用台阶，可能的值是：left, center 或 right&lt;br/&gt; Type: String&lt;br/&gt;
+			</description>
+		</attribute>
+		<attribute>
+			<name>stickyTracking</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				鼠标事件的黏连追踪。为true时显示提示文本框，false不显示。&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true
+			</description>
+		</attribute>
+		<attribute>
+			<name>threshold</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				Y轴的值，作为区域图的基本值，以区分高于阈值或低于阈值&lt;br/&gt; Type: Number&lt;br/&gt;默认为0
+			</description>
+		</attribute>
+		<attribute>
+			<name>turboThreshold</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				当序列包含一个数据数组的长度超过了turboThreshold，只有一维数组中的数据或者二维数组中的x 和y的值被允许&lt;br/&gt; Type:Number&lt;br/&gt;默认为1000
+			</description>
+		</attribute>
+		<attribute>
+			<name>visible</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>设置序列初始化的可见性&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>定义序列的Z指数&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>borderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个column或bar的边界颜色。在bar，column，columnrange等中可用&lt;br/&gt; Type: String&lt;br/&gt;默认为#FFFFFF</description>
+		</attribute>
+		<attribute>
+			<name>borderRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个column或bar的边框圆角半径。在bar，column，columnrange等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>borderWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个column或bar的边框宽度。在bar，column，columnrange等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>colorByPoint</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当使用自动点颜色来自options.colors集合。在bar，boxplot,column，columnrange，errorbar等中可用&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>colors</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当colorByPoint为true时，一系列特定的或系列类型特定颜色设置代替全局colors 。在bar，boxplot,column，columnrange，errorbar等中可用&lt;br/&gt; Type:Array<![CDATA[<Color>]]>&lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>fillColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>区域的填充色或渐变色。在area,boxplot等中可用&lt;br/&gt; Type: Color&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>fillOpacity</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>区域的透明度。在area等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为0.75</description>
+		</attribute>
+		<attribute>
+			<name>groupPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在x轴的单位中，每个值组间的填充。在bar,boxplot,column等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为0.2</description>
+		</attribute>
+		<attribute>
+			<name>grouping</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否让组非堆叠列或让其相互独立。在bar,boxplot,column等中可用&lt;br/&gt; Type: Boolean&lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>lineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>图线的一个单独的颜色。在area等中可用&lt;br/&gt; Type:  Color&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>minPointLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列的最小高度或条的最小宽度。在bar,column等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为 0</description>
+		</attribute>
+		<attribute>
+			<name>negativeFillColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>负面部分区域的单独的颜色。在area等中可用&lt;br/&gt; Type: Color&lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>pointPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>在x轴的单位上，每列或条之间填充。在bar,column等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为 0.1</description>
+		</attribute>
+		<attribute>
+			<name>pointRange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>X轴范围,每个点是有效的。在bar,column等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>pointWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>列或条定宽的像素值。在bar,column等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>stemColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>阀杆的颜色。在boxplot,errorbar等中可用&lt;br/&gt; Type: Color&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>stemDashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>阀杆的破折号风格。在boxplot,errorbar等中可用&lt;br/&gt; Type: String&lt;br/&gt;默认为Solid.</description>
+		</attribute>
+		<attribute>
+			<name>stemWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>阀杆的宽度。在boxplot,errorbar等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>whiskerColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.....数。在boxplot,errorbar等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>whiskerLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.....数。在boxplot,errorbar等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>whiskerWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.....数。在boxplot,errorbar等中可用&lt;br/&gt; Type: Number&lt;br/&gt;默认为null</description>
+		</attribute>
+		
+	</tag>
+	<tag>
+		<name>dateLabels</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.DateLabelsTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>数据标签。plotoptions标签下使用</description>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				数据标签的水平对齐方式，可以是："left", "center"或"right"&lt;br/&gt;Type: String &lt;br/&gt;默认为center
+			</description>
+		</attribute>
+		<attribute>
+			<name>backgroundColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签的背景色&lt;br/&gt;Type: Color &lt;br/&gt;默认值undefined.</description>
+		</attribute>
+		<attribute>
+			<name>borderColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签的边框色&lt;br/&gt;Type: Color &lt;br/&gt;默认值undefined.</description>
+		</attribute>
+		<attribute>
+			<name>borderRadius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签的边框圆角半径&lt;br/&gt;Type:  Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>borderWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签的边框宽度&lt;br/&gt;Type: Number&lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>color</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签内文本的颜色&lt;br/&gt;Type: Color&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>crop</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否隐藏超出绘图区域外的数据标签&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 true</description>
+		</attribute>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否启用数据标签&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 false</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				一个格式字符串的数据标签。可用的变量和formatter相同。&lt;br/&gt;Type: String&lt;br/&gt;默认为 {y}
+			</description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>回调Javascript函数格式化数据标签。&lt;br/&gt;Type: Function&lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>inside</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				对某种程度上的点（像列）或实际的价值点,是否对齐标签在盒子里面的数据。&lt;br/&gt;Type: Boolean&lt;br/&gt;大多数情况下默认值为false,在堆列为true。
+			</description>
+		</attribute>
+		<attribute>
+			<name>maxStaggerLines</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				水平方向上，当未设置staggerLines用maxStaggerLines来限制行数避免重叠&lt;br/&gt;Type: Number&lt;br/&gt;默认为5，设为1禁用重叠检测
+			</description>
+		</attribute>
+		<attribute>
+			<name>padding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				当borderWidth或backgroundColor一个设置,盒子内的填充&lt;br/&gt;Type: Number&lt;br/&gt;默认为2
+			</description>
+		</attribute>
+		<attribute>
+			<name>rotation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本旋转角度&lt;br/&gt;Type: Number&lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>shadow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				标签框的阴影。最适合backgroundColor或borderWidth&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为false
+			</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签的样式&lt;br/&gt;Type:CSSObject&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>useHTML</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否用HTML渲染标签&lt;br/&gt;Type:Boolean&lt;br/&gt;默认为 false</description>
+		</attribute>
+		<attribute>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签的垂直排列&lt;br/&gt;Type:String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>x</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于点的x偏移量&lt;br/&gt;Type: Number&lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>y</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于点的y偏移量&lt;br/&gt;Type: Number&lt;br/&gt;默认为-6</description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签的Z索引&lt;br/&gt;Type:Number&lt;br/&gt;默认为 6</description>
+		</attribute>
+		<attribute>
+			<name>xHigh</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于点值的x偏移量的最高值。在arearange ,areasplinerange,columnrange等中可用&lt;br/&gt;Type:Number&lt;br/&gt;默认为 0</description>
+		</attribute>
+		<attribute>
+			<name>xLow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于点值的x偏移量的最低值。在arearange ,areasplinerange,columnrange等中可用&lt;br/&gt;Type:Number&lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>yHigh</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于点值的y偏移量的最高值。在arearange ,areasplinerange,columnrange等中可用&lt;br/&gt;Type:Number&lt;br/&gt;默认为- 6</description>
+		</attribute>
+		<attribute>
+			<name>yLow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>相对于点值的y偏移量的最低值。在arearange ,areasplinerange,columnrange等中可用&lt;br/&gt;Type:Number&lt;br/&gt;默认为 16</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>marker</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.MarkerTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>标记。plotoptions标签下使用</description>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用点标记&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>fillColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的填充颜色&lt;br/&gt;Type: Color &lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>lineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的外边框线的颜色&lt;br/&gt;Type: Color &lt;br/&gt;默认值#FFFFFF.</description>
+		</attribute>
+		<attribute>
+			<name>lineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的外边框线的宽度&lt;br/&gt;Type:Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>radius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的半径&lt;br/&gt;Type: Number&lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>symbol</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>为标记预先定义的形状或标志&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>markerStates</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.MarkerStatesTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>标记状态marker标签下使用</description>
+		<attribute>
+			<name>hover</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				鼠标覆盖状态&lt;br/&gt;参数 描述 默认值&lt;br/&gt;enabled 启用或禁用点标记的鼠标滑过状态 true&lt;br/&gt;fillColor
+				点标记的填充颜色
+					null&lt;br/&gt;lineColor 点标记的外边框线的颜色 #FFFFFF&lt;br/&gt;lineWidth
+				点标记的外边框线的宽度
+					0.0&lt;br/&gt;radius 点标记的半径 null&lt;br/&gt;填写规则：hover="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>select</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				选中状态&lt;br/&gt;参数 描述 默认值&lt;br/&gt;enabled 启用或禁用点标记的选中状态 true&lt;br/&gt; fillColor
+				点标记的填充颜色
+					null&lt;br/&gt;lineColor点标记的外边框线的颜色 #FFFFFF&lt;br/&gt; lineWidth
+				点标记的外边框线的宽度
+					0.0&lt;br/&gt;radius 点标记的半径 null&lt;br/&gt;填写规则：select="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>point</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.PointTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>plotoptions标签下使用</description>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				单个点的事件&lt;br/&gt;参数 描述 默认值&lt;br/&gt;click 当点被单击时触发 null &lt;br/&gt;mouseOut
+				当鼠标离开区域去接近点的时候触发
+									null &lt;br/&gt;mouseOver 当鼠标进入区域图接近点的时候触发 null &lt;br/&gt;remove
+				当鼠标进入区域图接近点的时候触发
+									null &lt;br/&gt;select 当点被通过编程选中或者是单击点选中时触发 null &lt;br/&gt;unselect
+				当点被通过编程不被选中或者是单击点不被选中时触发。
+									null &lt;br/&gt;update 当点被通过.update()方法被程序更新时触发
+				null&lt;br/&gt;填写规则：select="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>statesHover</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.StatesHoverTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>鼠标覆盖状态在。plotoptions标签下使用。</description>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用点标记的鼠标滑过状态&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>lineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的外边框线的宽度&lt;br/&gt;Type:Number &lt;br/&gt;默认值2</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>statesHoverMarker</name>
+		<tag-class>
+			com.loit.core.web.tag.highchart.plotoptions.StatesHoverMarkerTag
+		</tag-class>
+		<body-content>JSP</body-content>
+		<description>鼠标覆盖状态标记，在statesHover标签下使用</description>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用点标记&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>fillColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的填充颜色&lt;br/&gt;Type: Color &lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>lineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的外边框线的颜色&lt;br/&gt;Type: Color &lt;br/&gt;默认值#FFFFFF.</description>
+		</attribute>
+		<attribute>
+			<name>lineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的外边框线的宽度&lt;br/&gt;Type:Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>radius</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>点标记的半径&lt;br/&gt;Type: Number&lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>symbol</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>为标记预先定义的形状或标志&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>ptooltip</name>
+		<tag-class>com.loit.core.web.tag.highchart.plotoptions.TooltipTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>在plotoptions标签下使用当用户将鼠标悬停于一个序列或点,选项出现工具提示。</description>
+		<attribute>
+			<name>dateTimeLabelFormats</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				对于时间轴上的序列，工具提示头的日期的格式默认根据最近的数据点猜测。成员给出默认字符串用于表示每个单元&lt;br/&gt;Type: Object
+				&lt;br/&gt;默认为
+				{&lt;br/&gt;millisecond:"%A,
+				%b
+				%e,
+				%H:%M:%S.%L",&lt;br/&gt;second:"%A,
+				%b
+				%e,
+				%H:%M:%S",&lt;br/&gt;minute:"%A,
+				%b
+				%e,
+				%H:%M",&lt;br/&gt;hour:"%A,
+				%b
+				%e,
+				%H:%M",&lt;br/&gt;day:"%A,
+				%b
+				%e,
+				%Y",&lt;br/&gt;week:"Week
+				from
+				%A,
+				%b
+				%e,
+									%Y",&lt;br/&gt;month:"%B
+				%Y",&lt;br/&gt;year:"%Y"&lt;br/&gt;}&lt;br/&gt;填写规则：dateTimeLabelFormats="属性名1:属性值1,属性名2:属性值2"
+			</description>
+		</attribute>
+		<attribute>
+			<name>followPointer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				提示信息是否随着鼠标移动跨列，包括饼图分区和其他点的类型。默认情况下它表现方式&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为
+true
+			</description>
+		</attribute>
+		<attribute>
+			<name>followTouchMove</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>提示信息是否随手指在触摸设备移动移动。&lt;br/&gt;Type: Boolean&lt;br/&gt;默认为 false</description>
+		</attribute>
+		<attribute>
+			<name>footerFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>附加到提示格式的字符串&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>headerFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>HTML工具提示的标题行&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>hideDelay</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当鼠标从一个点或图表提示隐藏的毫秒数。&lt;br/&gt;Type: Number&lt;br/&gt;默认为 500</description>
+		</attribute>
+		<attribute>
+			<name>pointFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>HTML的点的线在工具提示。&lt;br/&gt;Type: String&lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>valueDecimals</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每个序列的y值显示多少小数位&lt;br/&gt;Type:  Number&lt;br/&gt;默认保存所有小数</description>
+		</attribute>
+		<attribute>
+			<name>valuePrefix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>附加到序列y值的前缀&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>valueSuffix</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>附加到序列y值的后缀&lt;br/&gt;Type: String&lt;br/&gt;默认为 null</description>
+		</attribute>
+		<attribute>
+			<name>xDateFormat</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+				如果x轴是时间轴，显示在提示头部的日期格式。&lt;br/&gt;Type: String&lt;br/&gt;默认基于每个点的最小距离的大约数
+			</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>xAxis</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.XAxisTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>xAxis标签</description>
+		<attribute>
+			<name>categories</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>如果类别是本图的X轴，该轴的刻度将被名字代替。&lt;br/&gt;Type: Array &lt;br/&gt;默认为null &lt;br/&gt; 例如：categories: ['Apples', 'Bananas', 'Oranges']</description>
+		</attribute>
+		<attribute>
+			<name>allowDecimals</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴上的刻度是否允许使用小数。&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>alternateGridColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当使用备用的网格颜色时，表格会各行变色&lt;br/&gt;Type:String &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>dateTimeLabelFormats</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 时间轴，标尺会根据合适的单位自动计算。&lt;br/&gt;Type: Object &lt;br/&gt;默认为 {second:'%H:%M:%S',&lt;br/&gt;minute:'%H:%M',&lt;br/&gt;hour:'%H:%M',&lt;br/&gt;day:'%e. %b',&lt;br/&gt;week:'%e. %b',&lt;br/&gt;month:'%b \'%y',&lt;br/&gt;year:'%Y'}
+			</description>
+		</attribute>
+		<attribute>
+			<name>endOnTick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否强制轴以一个刻度结束。使用该项和maxPadding想来控制轴的末端。&lt;br/&gt;Type:Boolean &lt;br/&gt;默认值 false</description>
+		</attribute>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>事件&lt;br/&gt;Type: String &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>gridLineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 绘图区网格线的颜色&lt;br/&gt;Type:Color&lt;br/&gt;默认值#C0C0C0</description>
+		</attribute>
+		<attribute>
+			<name>gridLineDashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>网格线的点或线的样式&lt;br/&gt;Type: String &lt;br/&gt;默认为Solid</description>
+		</attribute>
+		<attribute>
+			<name>gridLineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>绘图区网格线的宽度&lt;br/&gt;Type:Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的id。可以在图表渲染后，通过chart.get()获得一个点&lt;br/&gt;Type: String&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>lineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 轴本身的线的颜色。&lt;br/&gt;Type:Color &lt;br/&gt;默认值#C0D0E0</description>
+		</attribute>
+		<attribute>
+			<name>lineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴本身的线的宽度。&lt;br/&gt;Type: Number &lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>linkedTo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 指向本轴的另一个轴的索引。当一个轴指向主轴时，它将有和主轴一样的极端值，但是通过min，max或setExtremes可以更改。它也可以用来显示附加的信息，或者通过复制标尺来缓解图表显示。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的最大值。如果是null，最大值被自动计算。如果endOnTick选项是true，max的值可能会被四舍五入。实际的最大值也会被chart.alignTicks影响。&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>maxPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 最大值相对于轴的长度的填充间距。padding值为0.05时会取100px长的轴的5px长度。&lt;br/&gt;Type:Number &lt;br/&gt;默认值 0.01</description>
+		</attribute>
+		<attribute>
+			<name>maxZoom</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>已过期。V2.2版本后改名为minRange.&lt;br/&gt;Type: Number &lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>min</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的最小值。如果是null，最小值会被自动计算。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 最小值相对于轴的长度的填充间距。如果padding的值为0.05将会取一个长为100px轴的5px值&lt;br/&gt;Type:Number&lt;br/&gt;默认为0.1</description>
+		</attribute>
+		<attribute>
+			<name>minRange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 轴显示的最小范围。整个轴将不被允许跨越这个最小间隔。比如一个时间轴，主要单位是毫秒&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minTickInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴值允许的最小刻度间隔。比如缩放轴用来显示每天的数据，可以用来阻止轴上显示小时的时间&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minorGridLineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小级别，次级的网格线的颜色&lt;br/&gt;Type:Color &lt;br/&gt;默认值#E0E0E0</description>
+		</attribute>
+		<attribute>
+			<name>minorGridLineDashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级网格线的破折号或点的样式&lt;br/&gt;Type: String &lt;br/&gt;默认为Solid</description>
+		</attribute>
+		<attribute>
+			<name>minorGridLineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级网格线的宽度。&lt;br/&gt;Type:Number &lt;br/&gt;默认值1</description>
+		</attribute>
+		<attribute>
+			<name>minorTickColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度标记的颜色。&lt;br/&gt;Type: Color &lt;br/&gt;默认为#A0A0A0</description>
+		</attribute>
+		<attribute>
+			<name>minorTickInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 次级网格线的刻度间隔，以标尺为单位。在线性轴中，如果是‘auto’，次级刻度间隔是刻度间隔的五分之一。如果是null，次级刻度将不显示。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minorTickLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度的像素长度&lt;br/&gt;Type: Number &lt;br/&gt;默认为2</description>
+		</attribute>
+		<attribute>
+			<name>minorTickPosition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度相对于轴线的位置。可以是inside或outside。&lt;br/&gt;Type: String &lt;br/&gt;默认值outside</description>
+		</attribute>
+		<attribute>
+			<name>minorTickWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度的像素宽度&lt;br/&gt;Type: Number &lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>offset</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 绘图区到轴线的像素距离。正的偏移量会让轴的线、便签和刻度远离绘图区。&lt;br/&gt;Type:Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>opposite</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 是否显示在正常显示的对面一侧显示轴。正常显示是垂直的左边，水平的下面，因此对面就是垂直的右边和水平的上边&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>reversed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否逆转轴以使得最高的点最接近起点。&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>showEmpty</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 是否显示轴线和标题，当轴不包含数据时&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>showFirstLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示第一个刻度标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>showLastLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示最后一个刻度标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>startOfWeek</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>对于时间轴，决定轴之间的刻度。0=周日，1=周一。&lt;br/&gt;Type:Number &lt;br/&gt;默认值1</description>
+		</attribute>
+		<attribute>
+			<name>startOnTick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否强制轴以刻度开始。结合maxPadding选项使用控制轴的开始&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>tickColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的颜色&lt;br/&gt;Type:Color&lt;br/&gt;默认值#C0D0E0.</description>
+		</attribute>
+		<attribute>
+			<name>tickInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的间隔，以轴单位为单位。当为null时，线性轴的刻度间隔约等于tickPixelInterval，时间轴的约为时间间隔。&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>tickLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的长度。&lt;br/&gt;Type:Number &lt;br/&gt;默认值5</description>
+		</attribute>
+		<attribute>
+			<name>tickPixelInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当tickInterval是null的时候，该选项设置了刻度标志的大约间隔的像素值。&lt;br/&gt;Type:Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>tickPosition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>刻度标记相对于轴线的位置。可以是inside或outside。&lt;br/&gt;Type:String &lt;br/&gt;默认值outside</description>
+		</attribute>
+		<attribute>
+			<name>tickPositioner</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>回调函数，返回一个定义刻度在轴上的排列的数组。&lt;br/&gt;Type: Function &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>tickPositions</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.定义轴刻度的数组&lt;br/&gt;Type: Array &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>tickWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的像素宽度。&lt;br/&gt;Type: Number &lt;br/&gt;默认为1</description>
+		</attribute>
+		<attribute>
+			<name>tickmarkPlacement</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>仅用在分类轴上。如果是on，刻度标记在分类的正中间，如果是between，刻度在两个分类的之间。&lt;br/&gt;Type:String &lt;br/&gt;默认值between</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的类型。可以是linear，logarithmic，或者datetime。&lt;br/&gt;Type: String &lt;br/&gt;默认为linear</description>
+		</attribute>
+		
+	</tag>
+	<tag>
+		<name>yAxis</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.YAxisTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>yAxis标签</description>
+		<attribute>
+			<name>allowDecimals</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴上的刻度是否允许使用小数。&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>alternateGridColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当使用备用的网格颜色时，表格会各行变色&lt;br/&gt;Type:String &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>dateTimeLabelFormats</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 时间轴，标尺会根据合适的单位自动计算。&lt;br/&gt;Type: Object &lt;br/&gt;默认为 {second:'%H:%M:%S',&lt;br/&gt;minute:'%H:%M',&lt;br/&gt;hour:'%H:%M',&lt;br/&gt;day:'%e. %b',&lt;br/&gt;week:'%e. %b',&lt;br/&gt;month:'%b \'%y',&lt;br/&gt;year:'%Y'}
+			</description>
+		</attribute>
+		<attribute>
+			<name>endOnTick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否强制轴以一个刻度结束。使用该项和maxPadding想来控制轴的末端。&lt;br/&gt;Type:Boolean &lt;br/&gt;默认值 false</description>
+		</attribute>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>事件&lt;br/&gt;Type: String &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>gridLineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 绘图区网格线的颜色&lt;br/&gt;Type:Color&lt;br/&gt;默认值#C0C0C0</description>
+		</attribute>
+		<attribute>
+			<name>gridLineDashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>网格线的点或线的样式&lt;br/&gt;Type: String &lt;br/&gt;默认为Solid</description>
+		</attribute>
+		<attribute>
+			<name>gridLineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>绘图区网格线的宽度&lt;br/&gt;Type:Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的id。可以在图表渲染后，通过chart.get()获得一个点&lt;br/&gt;Type: String&lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>lineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 轴本身的线的颜色。&lt;br/&gt;Type:Color &lt;br/&gt;默认值#C0D0E0</description>
+		</attribute>
+		<attribute>
+			<name>lineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴本身的线的宽度。&lt;br/&gt;Type: Number &lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>linkedTo</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 指向本轴的另一个轴的索引。当一个轴指向主轴时，它将有和主轴一样的极端值，但是通过min，max或setExtremes可以更改。它也可以用来显示附加的信息，或者通过复制标尺来缓解图表显示。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的最大值。如果是null，最大值被自动计算。如果endOnTick选项是true，max的值可能会被四舍五入。实际的最大值也会被chart.alignTicks影响。&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>maxPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 最大值相对于轴的长度的填充间距。padding值为0.05时会取100px长的轴的5px长度。&lt;br/&gt;Type:Number &lt;br/&gt;默认值 0.01</description>
+		</attribute>
+		<attribute>
+			<name>maxZoom</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>已过期。V2.2版本后改名为minRange.&lt;br/&gt;Type: Number &lt;br/&gt;</description>
+		</attribute>
+		<attribute>
+			<name>min</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的最小值。如果是null，最小值会被自动计算。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minPadding</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 最小值相对于轴的长度的填充间距。如果padding的值为0.05将会取一个长为100px轴的5px值&lt;br/&gt;Type:Number&lt;br/&gt;默认为0.1</description>
+		</attribute>
+		<attribute>
+			<name>minRange</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 轴显示的最小范围。整个轴将不被允许跨越这个最小间隔。比如一个时间轴，主要单位是毫秒&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minTickInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴值允许的最小刻度间隔。比如缩放轴用来显示每天的数据，可以用来阻止轴上显示小时的时间&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minorGridLineColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>最小级别，次级的网格线的颜色&lt;br/&gt;Type:Color &lt;br/&gt;默认值#E0E0E0</description>
+		</attribute>
+		<attribute>
+			<name>minorGridLineDashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级网格线的破折号或点的样式&lt;br/&gt;Type: String &lt;br/&gt;默认为Solid</description>
+		</attribute>
+		<attribute>
+			<name>minorGridLineWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级网格线的宽度。&lt;br/&gt;Type:Number &lt;br/&gt;默认值1</description>
+		</attribute>
+		<attribute>
+			<name>minorTickColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度标记的颜色。&lt;br/&gt;Type: Color &lt;br/&gt;默认为#A0A0A0</description>
+		</attribute>
+		<attribute>
+			<name>minorTickInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 次级网格线的刻度间隔，以标尺为单位。在线性轴中，如果是‘auto’，次级刻度间隔是刻度间隔的五分之一。如果是null，次级刻度将不显示。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>minorTickLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度的像素长度&lt;br/&gt;Type: Number &lt;br/&gt;默认为2</description>
+		</attribute>
+		<attribute>
+			<name>minorTickPosition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度相对于轴线的位置。可以是inside或outside。&lt;br/&gt;Type: String &lt;br/&gt;默认值outside</description>
+		</attribute>
+		<attribute>
+			<name>minorTickWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>次级刻度的像素宽度&lt;br/&gt;Type: Number &lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>offset</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 绘图区到轴线的像素距离。正的偏移量会让轴的线、便签和刻度远离绘图区。&lt;br/&gt;Type:Number &lt;br/&gt;默认值0</description>
+		</attribute>
+		<attribute>
+			<name>opposite</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 是否显示在正常显示的对面一侧显示轴。正常显示是垂直的左边，水平的下面，因此对面就是垂直的右边和水平的上边&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>reversed</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否逆转轴以使得最高的点最接近起点。&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>showEmpty</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 是否显示轴线和标题，当轴不包含数据时&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>showFirstLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示第一个刻度标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>showLastLabel</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否显示最后一个刻度标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>startOfWeek</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>对于时间轴，决定轴之间的刻度。0=周日，1=周一。&lt;br/&gt;Type:Number &lt;br/&gt;默认值1</description>
+		</attribute>
+		<attribute>
+			<name>startOnTick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否强制轴以刻度开始。结合maxPadding选项使用控制轴的开始&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为false</description>
+		</attribute>
+		<attribute>
+			<name>tickColor</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的颜色&lt;br/&gt;Type:Color&lt;br/&gt;默认值#C0D0E0.</description>
+		</attribute>
+		<attribute>
+			<name>tickInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的间隔，以轴单位为单位。当为null时，线性轴的刻度间隔约等于tickPixelInterval，时间轴的约为时间间隔。&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>tickLength</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的长度。&lt;br/&gt;Type:Number &lt;br/&gt;默认值5</description>
+		</attribute>
+		<attribute>
+			<name>tickPixelInterval</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>当tickInterval是null的时候，该选项设置了刻度标志的大约间隔的像素值。&lt;br/&gt;Type:Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>tickPosition</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>刻度标记相对于轴线的位置。可以是inside或outside。&lt;br/&gt;Type:String &lt;br/&gt;默认值outside</description>
+		</attribute>
+		<attribute>
+			<name>tickPositioner</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>回调函数，返回一个定义刻度在轴上的排列的数组。&lt;br/&gt;Type: Function &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>tickPositions</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.定义轴刻度的数组&lt;br/&gt;Type: Array &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>tickWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>主刻度的像素宽度。&lt;br/&gt;Type: Number &lt;br/&gt;默认为1</description>
+		</attribute>
+		<attribute>
+			<name>tickmarkPlacement</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>仅用在分类轴上。如果是on，刻度标记在分类的正中间，如果是between，刻度在两个分类的之间。&lt;br/&gt;Type:String &lt;br/&gt;默认值between</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴的类型。可以是linear，logarithmic，或者datetime。&lt;br/&gt;Type: String &lt;br/&gt;默认为linear</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>axisTitle</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.AxisTitleTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>yAxis标签</description>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标题水平对齐方式&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为middle</description>
+		</attribute>
+		<attribute>
+			<name>axisMargin</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标题和绘图区的边距。&lt;br/&gt;默认值是0</description>
+		</attribute>
+		<attribute>
+			<name>offset</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 绘图区到轴线的像素距离。正的偏移量会让轴的线、便签和刻度远离绘图区。&lt;br/&gt;Type:Number &lt;br/&gt;默认值null</description>
+		</attribute>
+		<attribute>
+			<name>rotation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文字旋转角度&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式&lt;br/&gt;Type: CSSObject &lt;br/&gt;默认为style: {color: '#6D869F',fontWeight: 'bold'}</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本内容&lt;br/&gt;Type: String &lt;br/&gt;默认为null</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>plotBands</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.PlotBandsTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>yAxis标签</description>
+		<attribute>
+			<name>color</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节带的颜色&lt;br/&gt;Type: Color &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>from</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节带开始的位置，以轴的单位&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>to</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节带结束的位置，以轴的单位&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节带的鼠标事件。支持的属性click,mouseover,mouseout,mousemove &lt;br/&gt;Type: Object &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>定义情节带的id，用在Axis.removePlotBand中 &lt;br/&gt;Type: String &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节带在图表中的z索引&lt;br/&gt;Type:Number&lt;br/&gt;默认为 null</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>plotLines</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.PlotLinesTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>yAxis标签</description>
+		<attribute>
+			<name>color</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.情节线的颜色&lt;br/&gt;Type: Color &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>dashStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>线的样式&lt;br/&gt;Type: String&lt;br/&gt;默认为Solid</description>
+		</attribute>
+		<attribute>
+			<name>events</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节线的鼠标事件。支持的属性click,mouseover,mouseout,mousemove&lt;br/&gt;Type:  Object &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节线的id&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 线的位置，以轴为单位&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>plotWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节线的宽度&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>情节线在图表中的z索引&lt;br/&gt;Type:Number&lt;br/&gt;默认为 null</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>plotLabel</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.PoltLabelTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>plotBands,plotLines下使用标签</description>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 水平对齐方式。可以是’left’,’right’,’center’.&lt;br/&gt;Type: String &lt;br/&gt;默认为center</description>
+		</attribute>
+		<attribute>
+			<name>rotation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文字旋转角度&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>样式&lt;br/&gt;Type: CSSObject &lt;br/&gt;默认为style: {color: '#6D869F',fontWeight: 'bold'}</description>
+		</attribute>
+		<attribute>
+			<name>text</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>文本&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>textAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 文本对齐方式&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>verticalAlign</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 标签准备排列方式&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为top</description>
+		</attribute>
+		<attribute>
+			<name>x</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> X的偏移量&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>y</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Y的偏移量&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+	</tag>
+	<tag>
+		<name>axisLabel</name>
+		<tag-class>com.loit.core.web.tag.highchart.axis.AxisLabelsTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>Axis标签下使用</description>
+		<attribute>
+			<name>enabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>启用或禁用轴标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>轴标签的一个格式字符串&lt;br/&gt;Type: String&lt;br/&gt;默认为 {value}.</description>
+		</attribute>
+		<attribute>
+			<name>formatter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>回调javascript函数格式化标签。值通过this.value得到。this的附加属性，axis，chart，isFirst和isLast。&lt;br/&gt;Type: Function&lt;br/&gt;默认为 function() {return this.value;}</description>
+		</attribute>
+		<attribute>
+			<name>overflow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>如果处理水平轴的溢出标签。可以是undefined和‘justify’。如果是justify，标签将不会在绘图区外渲染。如果有足够的空间去移动它，它将会在边缘对齐，否则会被移除。&lt;br/&gt;Type: String  &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>staggerLines</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>仅在水平轴使用。把标签分布在几行中以增大或缩小标签的空间。&lt;br/&gt;Type: Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>step</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每隔n个的标签显示在轴上。设置step为n。设置step为2，每隔1个显示标签。&lt;br/&gt;Type:  Number &lt;br/&gt;默认为null</description>
+		</attribute>
+		<attribute>
+			<name>useHTML</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>是否使用HTML渲染标签&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为true</description>
+		</attribute>
+		<attribute>
+			<name>zIndex</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据标签的Z索引&lt;br/&gt;Type:Number&lt;br/&gt;默认为 7</description>
+		</attribute>
+		<attribute>
+			<name>align</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>水平对齐方式。可以是’left’,’right’,’center’.&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为center</description>
+		</attribute>
+		<attribute>
+			<name>rotation</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 标签旋转的角度&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>style</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description> 标签的CSS样式&lt;br/&gt;Type: CSSObject &lt;br/&gt;默认为style: {color: '#6D869F',fontWeight: 'bold'}</description>
+		</attribute>
+		<attribute>
+			<name>x</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>.标签相对于轴刻度的位置的x的偏移量&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为0</description>
+		</attribute>
+		<attribute>
+			<name>y</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>标签相对于轴刻度的位置的y的偏移量&lt;br/&gt;Type: Boolean &lt;br/&gt;默认为0</description>
+		</attribute>
+	</tag>
+</taglib>

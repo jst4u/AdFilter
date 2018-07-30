@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysApp.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysApp.userId" />
+				<ref bean="SysApp.appCode" />
+				<ref bean="SysApp.appName" />
+				<ref bean="SysApp.appDesc" />
+				<ref bean="SysApp.appLogo" />
+				<ref bean="SysApp.remarks" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysApp.appId" parent="fieldDefinition">
+		<property name="fieldName" value="appId" />
+		<property name="label" value="应用id" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.userId" parent="fieldDefinition">
+		<property name="fieldName" value="userId" />
+		<property name="label" value="userId" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.appCode" parent="fieldDefinition">
+		<property name="fieldName" value="appCode" />
+		<property name="label" value="应用编号（唯一性）" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.appName" parent="fieldDefinition">
+		<property name="fieldName" value="appName" />
+		<property name="label" value="应用名称" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.appDesc" parent="fieldDefinition">
+		<property name="fieldName" value="appDesc" />
+		<property name="label" value="应用描述" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.appLogo" parent="fieldDefinition">
+		<property name="fieldName" value="appLogo" />
+		<property name="label" value="应用logo" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.remarks" parent="fieldDefinition">
+		<property name="fieldName" value="remarks" />
+		<property name="label" value="备注说明" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="200" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysApp.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysApp.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysApp.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

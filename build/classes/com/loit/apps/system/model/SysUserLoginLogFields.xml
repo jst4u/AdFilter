@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysUserLoginLog.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysUserLoginLog.userId" />
+				<ref bean="SysUserLoginLog.loginTime" />
+				<ref bean="SysUserLoginLog.logoutTime" />
+				<ref bean="SysUserLoginLog.tryTimes" />
+				<ref bean="SysUserLoginLog.userIp" />
+				<ref bean="SysUserLoginLog.hostName" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysUserLoginLog.userLoginLogId" parent="fieldDefinition">
+		<property name="fieldName" value="userLoginLogId" />
+		<property name="label" value="员工登录日志内部部门" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.userId" parent="fieldDefinition">
+		<property name="fieldName" value="userId" />
+		<property name="label" value="用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.loginTime" parent="fieldDefinition">
+		<property name="fieldName" value="loginTime" />
+		<property name="label" value="登录时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysUserLoginLog.logoutTime" parent="fieldDefinition">
+		<property name="fieldName" value="logoutTime" />
+		<property name="label" value="退出时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysUserLoginLog.tryTimes" parent="fieldDefinition">
+		<property name="fieldName" value="tryTimes" />
+		<property name="label" value="登录成功标志" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="precision" value="22" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.userIp" parent="fieldDefinition">
+		<property name="fieldName" value="userIp" />
+		<property name="label" value="登录IP" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.hostName" parent="fieldDefinition">
+		<property name="fieldName" value="hostName" />
+		<property name="label" value="登录主机名" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysUserLoginLog.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysUserLoginLog.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysUserLoginLog.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

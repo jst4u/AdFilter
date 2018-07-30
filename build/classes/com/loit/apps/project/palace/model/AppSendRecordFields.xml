@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="AppSendRecord.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="AppSendRecord.sendType" />
+				<ref bean="AppSendRecord.equCode" />
+				<ref bean="AppSendRecord.data1" />
+				<ref bean="AppSendRecord.data2" />
+				<ref bean="AppSendRecord.data3" />
+				<ref bean="AppSendRecord.sendTime" />
+				<ref bean="AppSendRecord.res" />
+				<ref bean="AppSendRecord.ext1" />
+				<ref bean="AppSendRecord.ext2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AppSendRecord.id" parent="fieldDefinition">
+		<property name="fieldName" value="id" />
+		<property name="label" value="ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.sendType" parent="fieldDefinition">
+		<property name="fieldName" value="sendType" />
+		<property name="label" value="发送类型" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.equCode" parent="fieldDefinition">
+		<property name="fieldName" value="equCode" />
+		<property name="label" value="设备编号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.data1" parent="fieldDefinition">
+		<property name="fieldName" value="data1" />
+		<property name="label" value="数据1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.data2" parent="fieldDefinition">
+		<property name="fieldName" value="data2" />
+		<property name="label" value="数据2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.data3" parent="fieldDefinition">
+		<property name="fieldName" value="data3" />
+		<property name="label" value="数据3" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.sendTime" parent="fieldDefinition">
+		<property name="fieldName" value="sendTime" />
+		<property name="label" value="发送时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.res" parent="fieldDefinition">
+		<property name="fieldName" value="res" />
+		<property name="label" value="发送结果" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.ext1" parent="fieldDefinition">
+		<property name="fieldName" value="ext1" />
+		<property name="label" value="备注1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.ext2" parent="fieldDefinition">
+		<property name="fieldName" value="ext2" />
+		<property name="label" value="备注2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppSendRecord.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppSendRecord.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppSendRecord.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

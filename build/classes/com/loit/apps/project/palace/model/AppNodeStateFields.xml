@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="AppNodeState.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="AppNodeState.nodeId" />
+				<ref bean="AppNodeState.currentValue" />
+				<ref bean="AppNodeState.voltageValue" />
+				<ref bean="AppNodeState.sendTime" />
+				<ref bean="AppNodeState.isRepeat" />
+				<ref bean="AppNodeState.repeatTimes" />
+				<ref bean="AppNodeState.repeatTime" />
+				<ref bean="AppNodeState.systemTime" />
+				<ref bean="AppNodeState.remarks1" />
+				<ref bean="AppNodeState.remarks2" />
+				<ref bean="AppNodeState.remarks3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AppNodeState.id" parent="fieldDefinition">
+		<property name="fieldName" value="id" />
+		<property name="label" value="ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.nodeId" parent="fieldDefinition">
+		<property name="fieldName" value="nodeId" />
+		<property name="label" value="节点ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.currentValue" parent="fieldDefinition">
+		<property name="fieldName" value="currentValue" />
+		<property name="label" value="电流值" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.voltageValue" parent="fieldDefinition">
+		<property name="fieldName" value="voltageValue" />
+		<property name="label" value="电压值" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.sendTime" parent="fieldDefinition">
+		<property name="fieldName" value="sendTime" />
+		<property name="label" value="发送时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.isRepeat" parent="fieldDefinition">
+		<property name="fieldName" value="isRepeat" />
+		<property name="label" value="是否重发" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="AppNodeState.repeatTimes" parent="fieldDefinition">
+		<property name="fieldName" value="repeatTimes" />
+		<property name="label" value="重发次数" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.repeatTime" parent="fieldDefinition">
+		<property name="fieldName" value="repeatTime" />
+		<property name="label" value="重发时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.systemTime" parent="fieldDefinition">
+		<property name="fieldName" value="systemTime" />
+		<property name="label" value="系统时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppNodeState.remarks1" parent="fieldDefinition">
+		<property name="fieldName" value="remarks1" />
+		<property name="label" value="备注1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.remarks2" parent="fieldDefinition">
+		<property name="fieldName" value="remarks2" />
+		<property name="label" value="备注2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.remarks3" parent="fieldDefinition">
+		<property name="fieldName" value="remarks3" />
+		<property name="label" value="备注3" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppNodeState.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="版本号" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

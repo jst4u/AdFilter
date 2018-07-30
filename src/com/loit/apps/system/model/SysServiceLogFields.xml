@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysServiceLog.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysServiceLog.userId" />
+				<ref bean="SysServiceLog.serverName" />
+				<ref bean="SysServiceLog.remoteAddress" />
+				<ref bean="SysServiceLog.remoteUser" />
+				<ref bean="SysServiceLog.serviceName" />
+				<ref bean="SysServiceLog.methodName" />
+				<ref bean="SysServiceLog.args" />
+				<ref bean="SysServiceLog.result" />
+				<ref bean="SysServiceLog.logTime" />
+				<ref bean="SysServiceLog.timeUsed" />
+				<ref bean="SysServiceLog.accessIndex" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysServiceLog.serviceLogId" parent="fieldDefinition">
+		<property name="fieldName" value="serviceLogId" />
+		<property name="label" value="主键" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.userId" parent="fieldDefinition">
+		<property name="fieldName" value="userId" />
+		<property name="label" value="用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.serverName" parent="fieldDefinition">
+		<property name="fieldName" value="serverName" />
+		<property name="label" value="服务器地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="30" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.remoteAddress" parent="fieldDefinition">
+		<property name="fieldName" value="remoteAddress" />
+		<property name="label" value="客户端地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="30" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.remoteUser" parent="fieldDefinition">
+		<property name="fieldName" value="remoteUser" />
+		<property name="label" value="客户端用户" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="30" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.serviceName" parent="fieldDefinition">
+		<property name="fieldName" value="serviceName" />
+		<property name="label" value="服务名" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.methodName" parent="fieldDefinition">
+		<property name="fieldName" value="methodName" />
+		<property name="label" value="方法名" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.args" parent="fieldDefinition">
+		<property name="fieldName" value="args" />
+		<property name="label" value="参数" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1024" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.result" parent="fieldDefinition">
+		<property name="fieldName" value="result" />
+		<property name="label" value="结果" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1024" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysServiceLog.logTime" parent="fieldDefinition">
+		<property name="fieldName" value="logTime" />
+		<property name="label" value="访问时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysServiceLog.timeUsed" parent="fieldDefinition">
+		<property name="fieldName" value="timeUsed" />
+		<property name="label" value="用时（毫秒）" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysServiceLog.accessIndex" parent="fieldDefinition">
+		<property name="fieldName" value="accessIndex" />
+		<property name="label" value="访问标识" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+</beans>

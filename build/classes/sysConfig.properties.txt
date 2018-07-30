@@ -1,0 +1,9 @@
+PROJECT_NAME=LoitCenter-V1.1
+SOURCE_DIR=src
+CONFIG_DIR=config
+CLASS_DIR=build/classes
+WEB_DIR=WebContent
+BASE_PACKAGE=com.loit
+THEME_DEFAULT=mblue
+
+APP_NAME = 应用系统名称

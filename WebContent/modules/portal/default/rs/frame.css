@@ -1,0 +1,38 @@
+body{font-family:"Microsoft YaHei";}
+.tabs{
+	padding-left:89px
+}
+.tabs-header{
+	padding:1px;
+}
+.tabs-header-plain .tabs-scroller-left{
+	top:1px;
+	height:25px!important;
+	height:27px;
+}
+.tabs-header-plain .tabs-scroller-right{
+	top:1px;
+	height:27px!important;
+	height:29px;
+}
+.tabs-header-plain .tabs-tool{
+	top:0px;
+	padding-top:0px;
+}
+
+.tabs li{
+	margin-right:1px;
+}
+
+.tabs li.tabs-selected{
+	border-bottom:0px solid red;
+}
+
+.menuitem {
+   cursor: pointer;
+   text-align:center;
+   padding:36px 0 10px;
+   background:url(/palace/modules/portal/menuimg/default.png) no-repeat center 0;
+}
+.menuitem:hover{background-image:url(/palace/modules/portal/menuimg/defaulto.png);}
+

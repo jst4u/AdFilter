@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysStation.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysStation.code" />
+				<ref bean="SysStation.name" />
+				<ref bean="SysStation.stationTypeId" />
+				<ref bean="SysStation.organizeId" />
+				<ref bean="SysStation.defaultDispatchFlag" />
+				<ref bean="SysStation.workDesc" />
+				<ref bean="SysStation.state" />
+				<ref bean="SysStation.remarks" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysStation.stationId" parent="fieldDefinition">
+		<property name="fieldName" value="stationId" />
+		<property name="label" value="岗位编码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.code" parent="fieldDefinition">
+		<property name="fieldName" value="code" />
+		<property name="label" value="岗位代码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.name" parent="fieldDefinition">
+		<property name="fieldName" value="name" />
+		<property name="label" value="岗位名称" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.stationTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="stationTypeId" />
+		<property name="label" value="岗位类型" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysStation.organizeId" parent="fieldDefinition">
+		<property name="fieldName" value="organizeId" />
+		<property name="label" value="所属组织" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysStation.defaultDispatchFlag" parent="fieldDefinition">
+		<property name="fieldName" value="defaultDispatchFlag" />
+		<property name="label" value="缺省派单标志" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysStation.workDesc" parent="fieldDefinition">
+		<property name="fieldName" value="workDesc" />
+		<property name="label" value="工作描述" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.state" parent="fieldDefinition">
+		<property name="fieldName" value="state" />
+		<property name="label" value="状态" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="1" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysStation.remarks" parent="fieldDefinition">
+		<property name="fieldName" value="remarks" />
+		<property name="label" value="备注" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="1000" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysStation.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysStation.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysStation.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

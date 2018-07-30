@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysCodeType.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysCodeType.codeTypeName" />
+				<ref bean="SysCodeType.codeTypeCode" />
+				<ref bean="SysCodeType.codeTypeDesc" />
+				<ref bean="SysCodeType.codeTypeType" />
+				<ref bean="SysCodeType.remarks" />
+				<ref bean="SysCodeType.dynColValue" />
+				<ref bean="SysCodeType.dynColName" />
+				<ref bean="SysCodeType.dynTablename" />
+				<ref bean="SysCodeType.dynWhere" />
+				<ref bean="SysCodeType.codeFrom" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysCodeType.codeTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="codeTypeId" />
+		<property name="label" value="代码类型ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.codeTypeName" parent="fieldDefinition">
+		<property name="fieldName" value="codeTypeName" />
+		<property name="label" value="代码类型名称" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.codeTypeCode" parent="fieldDefinition">
+		<property name="fieldName" value="codeTypeCode" />
+		<property name="label" value="编码类型代号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.codeTypeDesc" parent="fieldDefinition">
+		<property name="fieldName" value="codeTypeDesc" />
+		<property name="label" value="代码类型描述" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.codeTypeType" parent="fieldDefinition">
+		<property name="fieldName" value="codeTypeType" />
+		<property name="label" value="代码类型分类" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysCodeType.remarks" parent="fieldDefinition">
+		<property name="fieldName" value="remarks" />
+		<property name="label" value="备注说明" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="200" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.dynColValue" parent="fieldDefinition">
+		<property name="fieldName" value="dynColValue" />
+		<property name="label" value="动态代码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.dynColName" parent="fieldDefinition">
+		<property name="fieldName" value="dynColName" />
+		<property name="label" value="动态代码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.dynTablename" parent="fieldDefinition">
+		<property name="fieldName" value="dynTablename" />
+		<property name="label" value="动态代码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.dynWhere" parent="fieldDefinition">
+		<property name="fieldName" value="dynWhere" />
+		<property name="label" value="代码显示条件" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.codeFrom" parent="fieldDefinition">
+		<property name="fieldName" value="codeFrom" />
+		<property name="label" value="系统自带代码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysCodeType.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysCodeType.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysCodeType.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysCodeType.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

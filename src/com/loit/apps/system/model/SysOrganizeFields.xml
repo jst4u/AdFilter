@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="SysOrganize.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="SysOrganize.name" />
+				<ref bean="SysOrganize.districtId" />
+				<ref bean="SysOrganize.organizeTypeId" />
+				<ref bean="SysOrganize.parentOrganizeId" />
+				<ref bean="SysOrganize.manage" />
+				<ref bean="SysOrganize.contact" />
+				<ref bean="SysOrganize.contactTel" />
+				<ref bean="SysOrganize.fax" />
+				<ref bean="SysOrganize.email" />
+				<ref bean="SysOrganize.leve" />
+				<ref bean="SysOrganize.ex1" />
+				<ref bean="SysOrganize.ex2" />
+				<ref bean="SysOrganize.ex3" />
+				<ref bean="SysOrganize.ex4" />
+				<ref bean="SysOrganize.ex5" />
+				<ref bean="SysOrganize.ex6" />
+				<ref bean="SysOrganize.state" />
+				<ref bean="SysOrganize.remarks" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SysOrganize.organizeId" parent="fieldDefinition">
+		<property name="fieldName" value="organizeId" />
+		<property name="label" value="组织内部编码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.name" parent="fieldDefinition">
+		<property name="fieldName" value="name" />
+		<property name="label" value="组织名称" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.districtId" parent="fieldDefinition">
+		<property name="fieldName" value="districtId" />
+		<property name="label" value="所属行政区域" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysOrganize.organizeTypeId" parent="fieldDefinition">
+		<property name="fieldName" value="organizeTypeId" />
+		<property name="label" value="组织类型" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="6" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysOrganize.parentOrganizeId" parent="fieldDefinition">
+		<property name="fieldName" value="parentOrganizeId" />
+		<property name="label" value="上级组织" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.manage" parent="fieldDefinition">
+		<property name="fieldName" value="manage" />
+		<property name="label" value="负责人" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.contact" parent="fieldDefinition">
+		<property name="fieldName" value="contact" />
+		<property name="label" value="联系人名称" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.contactTel" parent="fieldDefinition">
+		<property name="fieldName" value="contactTel" />
+		<property name="label" value="联系人电话" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="15" />
+		<property name="width" value="150" />
+	</bean>
+
+	<bean id="SysOrganize.fax" parent="fieldDefinition">
+		<property name="fieldName" value="fax" />
+		<property name="label" value="传真号码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="15" />
+		<property name="width" value="150" />
+	</bean>
+
+	<bean id="SysOrganize.email" parent="fieldDefinition">
+		<property name="fieldName" value="email" />
+		<property name="label" value="联系人EMAIL地址" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="40" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.leve" parent="fieldDefinition">
+		<property name="fieldName" value="leve" />
+		<property name="label" value="组织级别" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="2" />
+		<property name="width" value="100" />
+	</bean>
+
+	<bean id="SysOrganize.ex1" parent="fieldDefinition">
+		<property name="fieldName" value="ex1" />
+		<property name="label" value="扩充字段1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.ex2" parent="fieldDefinition">
+		<property name="fieldName" value="ex2" />
+		<property name="label" value="扩充字段2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.ex3" parent="fieldDefinition">
+		<property name="fieldName" value="ex3" />
+		<property name="label" value="扩充字段3" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.ex4" parent="fieldDefinition">
+		<property name="fieldName" value="ex4" />
+		<property name="label" value="扩充字段4" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.ex5" parent="fieldDefinition">
+		<property name="fieldName" value="ex5" />
+		<property name="label" value="扩充字段5" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.ex6" parent="fieldDefinition">
+		<property name="fieldName" value="ex6" />
+		<property name="label" value="扩充字段6" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.state" parent="fieldDefinition">
+		<property name="fieldName" value="state" />
+		<property name="label" value="状态" />
+		<property name="fieldType" value="selectCode.user_status" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.remarks" parent="fieldDefinition">
+		<property name="fieldName" value="remarks" />
+		<property name="label" value="备注" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.creator" parent="fieldDefinition">
+		<property name="fieldName" value="creator" />
+		<property name="label" value="creator" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.createTime" parent="fieldDefinition">
+		<property name="fieldName" value="createTime" />
+		<property name="label" value="createTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysOrganize.modifier" parent="fieldDefinition">
+		<property name="fieldName" value="modifier" />
+		<property name="label" value="modifier" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="SysOrganize.modifyTime" parent="fieldDefinition">
+		<property name="fieldName" value="modifyTime" />
+		<property name="label" value="modifyTime" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="SysOrganize.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="recVer" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

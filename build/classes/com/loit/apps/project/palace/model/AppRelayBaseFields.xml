@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="AppRelayBase.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="AppRelayBase.relayId" />
+				<ref bean="AppRelayBase.relayState" />
+				<ref bean="AppRelayBase.installationPosition" />
+				<ref bean="AppRelayBase.installationPersonnel" />
+				<ref bean="AppRelayBase.installationTime" />
+				<ref bean="AppRelayBase.systemTime" />
+				<ref bean="AppRelayBase.remarks1" />
+				<ref bean="AppRelayBase.remarks2" />
+				<ref bean="AppRelayBase.remarks3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AppRelayBase.id" parent="fieldDefinition">
+		<property name="fieldName" value="id" />
+		<property name="label" value="ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.relayId" parent="fieldDefinition">
+		<property name="fieldName" value="relayId" />
+		<property name="label" value="中继ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.relayState" parent="fieldDefinition">
+		<property name="fieldName" value="relayState" />
+		<property name="label" value="中继状态" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.installationPosition" parent="fieldDefinition">
+		<property name="fieldName" value="installationPosition" />
+		<property name="label" value="安装位置" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="300" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.installationPersonnel" parent="fieldDefinition">
+		<property name="fieldName" value="installationPersonnel" />
+		<property name="label" value="安装人员" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.installationTime" parent="fieldDefinition">
+		<property name="fieldName" value="installationTime" />
+		<property name="label" value="安装时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppRelayBase.systemTime" parent="fieldDefinition">
+		<property name="fieldName" value="systemTime" />
+		<property name="label" value="系统时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppRelayBase.remarks1" parent="fieldDefinition">
+		<property name="fieldName" value="remarks1" />
+		<property name="label" value="备注1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.remarks2" parent="fieldDefinition">
+		<property name="fieldName" value="remarks2" />
+		<property name="label" value="备注2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.remarks3" parent="fieldDefinition">
+		<property name="fieldName" value="remarks3" />
+		<property name="label" value="备注3" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppRelayBase.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="版本号" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

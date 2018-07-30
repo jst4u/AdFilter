@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="AppBatteryState.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="AppBatteryState.batteryId" />
+				<ref bean="AppBatteryState.batteryVoltage" />
+				<ref bean="AppBatteryState.batteryTemperature" />
+				<ref bean="AppBatteryState.residualCapacity" />
+				<ref bean="AppBatteryState.systemTime" />
+				<ref bean="AppBatteryState.remarks1" />
+				<ref bean="AppBatteryState.remarks2" />
+				<ref bean="AppBatteryState.remarks3" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="AppBatteryState.id" parent="fieldDefinition">
+		<property name="fieldName" value="id" />
+		<property name="label" value="ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.batteryId" parent="fieldDefinition">
+		<property name="fieldName" value="batteryId" />
+		<property name="label" value="电池ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.batteryVoltage" parent="fieldDefinition">
+		<property name="fieldName" value="batteryVoltage" />
+		<property name="label" value="电池电压" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.batteryTemperature" parent="fieldDefinition">
+		<property name="fieldName" value="batteryTemperature" />
+		<property name="label" value="电池温度" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.residualCapacity" parent="fieldDefinition">
+		<property name="fieldName" value="residualCapacity" />
+		<property name="label" value="电池剩余容量" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="50" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.systemTime" parent="fieldDefinition">
+		<property name="fieldName" value="systemTime" />
+		<property name="label" value="系统时间" />
+		<property name="fieldType" value="datetime" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="width" value="190" />
+	</bean>
+
+	<bean id="AppBatteryState.remarks1" parent="fieldDefinition">
+		<property name="fieldName" value="remarks1" />
+		<property name="label" value="备注1" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.remarks2" parent="fieldDefinition">
+		<property name="fieldName" value="remarks2" />
+		<property name="label" value="备注2" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.remarks3" parent="fieldDefinition">
+		<property name="fieldName" value="remarks3" />
+		<property name="label" value="备注3" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="100" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="AppBatteryState.recVer" parent="fieldDefinition">
+		<property name="fieldName" value="recVer" />
+		<property name="label" value="版本号" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="precision" value="10" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

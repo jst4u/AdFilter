@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="TxSoftwareInfo.ALL" parent="fieldListDefinition">
+		<constructor-arg>
+			<list>
+				<ref bean="TxSoftwareInfo.uuid" />
+				<ref bean="TxSoftwareInfo.channelId" />
+				<ref bean="TxSoftwareInfo.stationmasterId" />
+				<ref bean="TxSoftwareInfo.version" />
+				<ref bean="TxSoftwareInfo.addtime" />
+				<ref bean="TxSoftwareInfo.runtime1" />
+				<ref bean="TxSoftwareInfo.runtime2" />
+				<ref bean="TxSoftwareInfo.runtime3" />
+				<ref bean="TxSoftwareInfo.status" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="TxSoftwareInfo.uid" parent="fieldDefinition">
+		<property name="fieldName" value="uid" />
+		<property name="label" value="软件信息ID=用户ID" />
+		<property name="fieldType" value="int" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="false" />
+		<property name="precision" value="10" />
+		<property name="width" value="110" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.uuid" parent="fieldDefinition">
+		<property name="fieldName" value="uuid" />
+		<property name="label" value="UUID机器码" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="36" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.channelId" parent="fieldDefinition">
+		<property name="fieldName" value="channelId" />
+		<property name="label" value="渠道编号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.stationmasterId" parent="fieldDefinition">
+		<property name="fieldName" value="stationmasterId" />
+		<property name="label" value="站长ID" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.version" parent="fieldDefinition">
+		<property name="fieldName" value="version" />
+		<property name="label" value="版本号" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.addtime" parent="fieldDefinition">
+		<property name="fieldName" value="addtime" />
+		<property name="label" value="安装时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.runtime1" parent="fieldDefinition">
+		<property name="fieldName" value="runtime1" />
+		<property name="label" value="第一次运行时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.runtime2" parent="fieldDefinition">
+		<property name="fieldName" value="runtime2" />
+		<property name="label" value="第二次运行时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.runtime3" parent="fieldDefinition">
+		<property name="fieldName" value="runtime3" />
+		<property name="label" value="第三次运行时间" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="20" />
+		<property name="width" value="200" />
+	</bean>
+
+	<bean id="TxSoftwareInfo.status" parent="fieldDefinition">
+		<property name="fieldName" value="status" />
+		<property name="label" value="软件状态" />
+		<property name="fieldType" value="string" />
+		<property name="sortable" value="true" />
+		<property name="nullable" value="true" />
+		<property name="length" value="2" />
+		<property name="width" value="100" />
+	</bean>
+
+</beans>

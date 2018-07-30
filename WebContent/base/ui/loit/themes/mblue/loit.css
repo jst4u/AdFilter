@@ -1,0 +1,25 @@
+/*------------------------------------------top---------------------------------------------*/
+body {
+	margin: 0;
+	padding: 0;
+	display:block;
+}
+
+form table{
+	margin:auto
+}
+	
+form th{
+	margin: 0;
+	color: #4d4d4d;
+	font-size: 12px;
+	font-weight: normal;
+	font-family: "宋体";
+	overflow: auto;
+	padding-left: 16px;
+	text-align:right;
+}
+
+input{
+	width:100px;
+}
